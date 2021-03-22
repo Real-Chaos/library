@@ -27,14 +27,29 @@ body {
     margin: 50px auto;
 }
 
+.submitBtn {
+    display: inline;
+    position: absolute;
+    right: 10%;
+}
+
+.resetBtn {
+    position: absolute;
+    left: 10%;
+}
+
+
 .bookBtn:hover {
     background-color: #9ae68b;
+}
+.resetBtn:hover {
+    background-color: red;
 }
 
 .bookForm {
     background-color: #d6e0f0;
     width: 400px;
-    height: 500px;
+    height: 600px;
     border: 2px solid black;
     border-radius: 20px;
     display: flex;
@@ -77,4 +92,17 @@ body {
 .closeBtn:hover {
     cursor: pointer;
     color: red;
+}
+
+.bookList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 200px;
+    border: 2px solid red;
+}
+
+.bookCard {
+    margin: auto;
+    background-color: #e0e2e7;
+    padding: 40px;
 }
