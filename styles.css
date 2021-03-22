@@ -1,0 +1,80 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+    width: 100%;
+}
+
+.titleDiv {
+    background-color: #d6e0f0;
+    border-bottom: 2px solid black;
+}
+
+.title {
+    text-align: center;
+    padding: 50px;
+    font-size: 2.8rem;
+}
+
+.bookBtn {
+    background-color: #abf79c;
+    padding: 25px;
+    font-size: 1.7rem;
+    display: block;
+    margin: 50px auto;
+}
+
+.bookBtn:hover {
+    background-color: #9ae68b;
+}
+
+.bookForm {
+    background-color: #d6e0f0;
+    width: 400px;
+    height: 500px;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 100px auto;
+}
+
+.bookForm h1 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.bookForm input {
+    display: block;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.bookForm input::placeholder {
+    color: black;
+    font-size: .9rem;
+    text-align: center;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    color: black;
+}
+
+.closeBtn:hover {
+    cursor: pointer;
+    color: red;
+}
