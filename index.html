@@ -11,27 +11,19 @@
 </head>
 <body>
     <header>
-        <div class="titleDiv">
-            <h1 class="title">LIBRARY</h1>
-        </div>
+        <h1><span class="redColor">My Library</span></h1>
+        <nav class="navBar">
+            <ul>
+                <li><a href="index.html"><span class="redColor">Home</span></a></li>
+                <li>My Novels</li>
+                <li>My Anime</li>
+                <li>My Manga</li>
+            </ul>
+        </nav>
     </header>
-    <div class="newBook">
-        <button type="button" class="bookBtn">New Book</button>
+    <div class="theme">
+        <i class="fas fa-sun lightMode"></i>
     </div>
-    <div class="bookForm">
-        <i class="fas fa-times closeBtn"></i>
-        <form class="form">
-            <h1>Add New Book</h1>
-            <input type="text" class="bookTitle" placeholder="Title" required>
-            <input type="text" class="bookAuthor" placeholder="Author" required>
-            <input type="number" class="bookPages" placeholder="Pages" required>
-            <button type="button" class="bookBtn submitBtn">Submit</button>
-            <button type="reset" class="bookBtn resetBtn">Reset</button>
-        </form>
-    </div>
-    <div class="bookList">
-
-    </div>  
     <script src="app.js"></script>
 </body>
 </html>

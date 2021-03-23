@@ -3,106 +3,57 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 body {
-    position: relative;
-    width: 100%;
+    background-color: #16151d;
+    color: white;
 }
 
-.titleDiv {
-    background-color: #d6e0f0;
-    border-bottom: 2px solid black;
-}
-
-.title {
-    text-align: center;
-    padding: 50px;
-    font-size: 2.8rem;
-}
-
-.bookBtn {
-    background-color: #abf79c;
-    padding: 25px;
-    font-size: 1.7rem;
-    display: block;
-    margin: 50px auto;
-}
-
-.submitBtn {
-    display: inline;
-    position: absolute;
-    right: 10%;
-}
-
-.resetBtn {
-    position: absolute;
-    left: 10%;
-}
-
-
-.bookBtn:hover {
-    background-color: #9ae68b;
-}
-.resetBtn:hover {
-    background-color: red;
-}
-
-.bookForm {
-    background-color: #d6e0f0;
-    width: 400px;
-    height: 600px;
-    border: 2px solid black;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 100px auto;
-}
-
-.bookForm h1 {
-    text-align: center;
-    padding-top: 20px;
-}
-
-.bookForm input {
-    display: block;
-    padding: 20px;
-    margin: 20px auto;
-}
-
-.bookForm input::placeholder {
-    color: black;
-    font-size: .9rem;
-    text-align: center;
-}
-
-.closeBtn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 10px;
-    color: black;
-}
-
-.closeBtn:hover {
-    cursor: pointer;
-    color: red;
-}
-
-.bookList {
+header {
+    background-color: black;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 200px;
-    border: 2px solid red;
+    justify-items: flex-end;
 }
 
-.bookCard {
-    margin: auto;
-    background-color: #e0e2e7;
-    padding: 40px;
+header h1 {
+    justify-self: flex-start;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+}
+
+.redColor {
+    color: #e50815;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    padding: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.lightMode {
+    font-size: 30px;
+    color: black;
+    border: 2px solid black;
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    transition: 600ms;
+}
+
+.lightMode:hover {
+    color: black;
+    background-color: white;
 }
