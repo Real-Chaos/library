@@ -27,3 +27,26 @@ function theme() {
 }
 
 theme();
+
+// Mobile Navigation ------------------------------------------------------------------------------------------------------------------------------------------------
+
+let mobileNav = false;
+const desktopMenu = document.querySelector('nav');
+const mobileNavbar = document.querySelector('.hamburgerMenu');
+const mobileNavMediaQuery = window.matchMedia('(max-width: 500px)');
+
+function mobileMenu() {
+    mobileNavbar.addEventListener('click', ()=> {
+        if(mobileNav === false) {
+            mobileNav = true;
+            desktopMenu.style.display = 'inline-block';
+        }
+
+        else if(mobileNav === true){
+            mobileNav = false;
+            desktopMenu.style.display = 'none';
+        }
+    })
+}
+
+mobileMenu();

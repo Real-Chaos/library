@@ -20,6 +20,7 @@ header h1 {
     display: inline-block;
     position: absolute;
     top: 10px;
+    padding-left: 40px;
 }
 
 .redColor {
@@ -56,4 +57,52 @@ nav ul li a {
 .lightMode:hover {
     color: black;
     background-color: white;
+}
+.mobileNav {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.hamburgerMenu {
+    font-size: 40px;
+    padding-right: 40px;
+}
+
+@media (min-width: 901px) {
+    .mobileNav {
+        display: none;
+    }
+    nav {
+        display: inline-block !important;
+    }
+
+}
+
+@media (max-width: 900px) {
+    header {
+        height: 60px;
+    }
+
+    .hamburgerMenu{
+        position: absolute;
+        top: 10px;
+        right: 40px;
+    }
+    nav {
+        display: none;
+        height: 100vh;
+        background-color: black;
+        padding: 70px 40px; 
+        text-align: center;
+    }
+
+    nav ul{
+        display: block;
+    }
+}
+
+@media (max-width: 500px) {
+    nav {
+        width: 100%;
+    }
 }
