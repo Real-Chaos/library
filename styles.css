@@ -7,10 +7,11 @@
 body {
     background-color: #16151d;
     color: white;
+    position: relative;
 }
 
 header {
-    background-color: black;
+    background-color: #913fe2;
     display: grid;
     justify-items: flex-end;
 }
@@ -27,16 +28,16 @@ header h1 {
     color: #e50815;
 }
 
-nav ul {
+.navBar ul {
     list-style-type: none;
     display: flex;
 }
 
-nav ul li {
+.navBar ul li {
     padding: 20px;
 }
 
-nav ul li a {
+.navBar ul li a {
     color: white;
     text-decoration: none;
 }
@@ -52,6 +53,7 @@ nav ul li a {
     bottom: 50px;
     left: 50px;
     transition: 600ms;
+    z-index: 10;
 }
 
 .lightMode:hover {
@@ -80,10 +82,16 @@ main div h3 {
     padding: 3%;
 }
 
-main div img {
+main div img{
     display: block;
     margin: auto;
     width: 40%;
+}
+
+.empty {
+    text-align: center;
+    position: relative;
+    top: 250px;
 }
 
 .coverImg {
@@ -140,6 +148,39 @@ main div img {
     color: red;
 }
 
+.blackLayer {
+    background-color: black;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blackLayer nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.blackLayer nav ul li {
+    padding: 0 20px;
+}
+
+
+footer {
+    background-color: #222;
+    height: 150px;
+    width: 100%;
+    display: grid;
+}
+
+footer img {
+    height: 200px;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+}
+
 @media (min-width: 901px) {
     .mobileNav {
         display: none;
@@ -159,16 +200,18 @@ main div img {
         position: absolute;
         top: 10px;
         right: 40px;
+        z-index: 12;
     }
-    nav {
+    .navBar {
         display: none;
-        height: 100vh;
+        height: 100%;
         background-color: black;
         padding: 70px 40px; 
         text-align: center;
+        z-index: 10;
     }
 
-    nav ul{
+    .navBar ul{
         display: block;
     }
 
