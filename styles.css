@@ -1,8 +1,12 @@
+/* Reset ---------------------------------------------------------------------------------------------------------------------------------*/
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
+/* General ---------------------------------------------------------------------------------------------------------------------------------*/
 
 body {
     background-color: #16151d;
@@ -12,29 +16,55 @@ body {
 
 header {
     background-color: #913fe2;
-    display: grid;
-    justify-items: flex-end;
-}
-
-header h1 {
-    justify-self: flex-start;
-    display: inline-block;
-    position: absolute;
-    top: 10px;
-    padding-left: 40px;
+    height: 35px;
 }
 
 .redColor {
     color: #e50815;
 }
 
+.logo {
+    display:  grid;
+    grid-template-rows: 0;
+    background-color: #0b0a0d;
+}
+.logo img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: solid #913fe2;
+    margin-left: 20%;
+    align-self: flex-end;
+    position: absolute;
+    top: 8px;
+}
+/* Navbar ---------------------------------------------------------------------------------------------------------------------------------*/
+.navBar {
+    margin-left: 20%;
+}
+
+.profileImg {
+    height: 30px;
+}
+
 .navBar ul {
     list-style-type: none;
     display: flex;
+    height: 35px;
+}
+
+.navBar ul li:hover {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .navBar ul li {
-    padding: 20px;
+    height: 35px;
+    padding: 15px;
+    align-self: center;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navBar ul li a {
@@ -43,23 +73,62 @@ header h1 {
 }
 
 
-.lightMode {
-    font-size: 30px;
-    color: black;
-    border: 2px solid black;
-    background-color: white;
-    padding: 10px;
-    position: fixed;
-    bottom: 50px;
-    left: 50px;
-    transition: 600ms;
-    z-index: 10;
+/* Change Profile ------------------------------------------------------------------------------------------------------------------------*/
+
+.changeProfile {
+    background-color: black;
+    width: 200px;
+    border: solid #913fe2;
+    margin-left: 17%;
+    display: grid;
+    padding: 20px;
+    display: none;
+    position: relative;
 }
 
-.lightMode:hover {
-    color: black;
-    background-color: white;
+.changeProfile label {
+    font-size: 14px;
+    align-self: center;
+    justify-self: start;
+    padding-left: 10%;
 }
+
+.changeProfile input {
+    height: 30px;
+    border: none;
+    background-color: #eee;
+    width: 80%;
+    justify-self: center;
+}
+
+.changeProfile input:focus {
+    outline: none;
+}
+/* LightMode ---------------------------------------------------------------------------------------------------------------------------------*/
+
+.theme {
+    margin: 20px;
+    height: 25px;
+    width: 50px;
+    border-radius: 34px;
+    background-color: #222;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20%;
+    justify-self: flex-end;
+}
+
+
+.lightMode {
+    font-size: 15px;
+    background-color: #913fe2;
+    border-radius: 50%;
+    padding: 5px;
+    color: black;
+    color: white;
+}
+
 .mobileNav {
     display: inline-flex;
     justify-content: center;
@@ -68,7 +137,9 @@ header h1 {
 .hamburgerMenu {
     font-size: 40px;
     padding-right: 40px;
-}
+} 
+
+/* Main Section ---------------------------------------------------------------------------------------------------------------------------------*/
 
 main {
     padding: 7% 15%;
@@ -88,17 +159,30 @@ main div img{
     width: 40%;
 }
 
+.mangaSection {
+    padding-bottom: 20%;
+}
+/* Empty Sign ---------------------------------------------------------------------------------------------------------------------------------*/
+
+.emptyDiv {
+    border: solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .empty {
-    text-align: center;
-    position: relative;
-    top: 250px;
+    position: absolute;
+    font-size: 90%;
 }
 
+/* Cover Image ---------------------------------------------------------------------------------------------------------------------------------*/
 .coverImg {
     width: 100%;
     height: 400px;
     cursor: pointer;
 }
+
+/* Change Image ---------------------------------------------------------------------------------------------------------------------------------*/
 
 .changeImageForm {
     background-color: black;
@@ -139,7 +223,7 @@ main div img{
     display: inline-block;
     position: absolute;
     right: 0;
-    padding: 20px;
+    padding-right: 5px;
     cursor: pointer;
     font-size: 20px;
 }
@@ -148,38 +232,18 @@ main div img{
     color: red;
 }
 
-.blackLayer {
-    background-color: black;
-    height: 50px;
+/* Footer --------------------------------------------------------------------------------------------------------------------------------- */
+
+.footer {
+    background-color: #913fe2;
+    height: 40px;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.blackLayer nav ul {
-    list-style-type: none;
-    display: flex;
-}
-
-.blackLayer nav ul li {
-    padding: 0 20px;
+    position: absolute;
+    bottom: 0px;
 }
 
 
-footer {
-    background-color: #222;
-    height: 150px;
-    width: 100%;
-    display: grid;
-}
-
-footer img {
-    height: 200px;
-    position: fixed;
-    bottom: 40px;
-    right: 20px;
-}
+/* Mobile ---------------------------------------------------------------------------------------------------------------------------------*/
 
 @media (min-width: 901px) {
     .mobileNav {

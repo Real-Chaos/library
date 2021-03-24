@@ -1,18 +1,14 @@
 // LightMode -------------------------------------------------------------------------------------------------------------------------------------------------------
 
-let lightMode = false;
-const themeChanger = document.querySelector('.lightMode');
-
 function theme() {
 
-    themeChanger.addEventListener('click', ()=> {
+    themeSlider.addEventListener('click', ()=> {
         if(lightMode === false) {
             lightMode = true;
             document.body.style.background = 'white';
             themeChanger.classList.remove('fa-sun');
             themeChanger.classList.add('fa-moon');
-            themeChanger.style.background = 'black';
-            themeChanger.style.color = 'white';
+            themeSlider.style.justifyContent = 'flex-start';
             document.body.style.color = 'black';
         }
         
@@ -22,20 +18,15 @@ function theme() {
             document.body.style.color = 'white';
             themeChanger.classList.remove('fa-moon');
             themeChanger.classList.add('fa-sun');
-            themeChanger.style.background = 'white';
-            themeChanger.style.color = 'black';
+            themeSlider.style.justifyContent = 'flex-end';
+            // themeChanger.style.color = 'black';
         }
     })
 }
 
-theme();
 
 // Mobile Navigation ------------------------------------------------------------------------------------------------------------------------------------------------
 
-let mobileNav = false;
-const desktopMenu = document.querySelector('nav');
-const mobileNavbar = document.querySelector('.hamburgerMenu');
-const mobileNavMediaQuery = window.matchMedia('(max-width: 500px)');
 
 function mobileMenu() {
     mobileNavbar.addEventListener('click', ()=> {
@@ -51,15 +42,30 @@ function mobileMenu() {
     })
 }
 
-mobileMenu();
+
+// Profile Image ---------------------------------------------------------------------------------------------------------------------------------------------------
+
+const profile = document.querySelector('.profileImg');
+const profileChange = document.querySelector('.changeProfile');
+let profileFormDisplayed = false;
+
+function changeProfile() {
+    profile.addEventListener('click', ()=> {
+        if(profileFormDisplayed === false) {
+            profileChange.style.display = 'grid';
+            profileFormDisplayed = true;
+        }
+        
+        else {
+            profileChange.style.display = 'none';
+            profileFormDisplayed = false;
+        }
+    });
+}
+
+changeProfile();
 
 // Cover Image -----------------------------------------------------------------------------------------------------------------------------------------------------
-
-const imageForm = document.querySelector('.changeImageForm');
-const newCoverURL = document.querySelector('.newImage');
-const coverImg = document.querySelector('.coverImg');
-const closeImgForm = document.querySelector('.closeBtn');
-const coverButton = document.querySelector('.changeCoverBtn');
 
 function displayForm() {
     coverImg.addEventListener('click', ()=> {
@@ -74,16 +80,54 @@ function displayForm() {
         newCoverURL.value = '';
     });
     
-}
-
-displayForm();
+} 
 
 function changeCoverImage() {
     coverButton.addEventListener('click', ()=> {
         coverImg.src = newCoverURL.value;
         imageForm.style.display = 'none';
         coverImg.style.display = 'block';
+        localStorage.setItem('cover', `${newCoverURL.value}`);
     });
 }
 
+// Local Storage -----------------------------------------------------------------------------------------------------------------------------------------------------
+
+function storage() {
+    if(localStorage.cover) {
+        coverImg.src = localStorage.getItem('cover');
+    }
+    else {
+        coverImg.src = 'images/libraryCover.jpeg';
+    }
+}
+
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let lightMode = false;
+const themeSlider = document.querySelector('.theme');
+const themeChanger = document.querySelector('.lightMode');
+
+
+let mobileNav = false;
+const desktopMenu = document.querySelector('nav');
+const mobileNavbar = document.querySelector('.hamburgerMenu');
+const mobileNavMediaQuery = window.matchMedia('(max-width: 500px)');
+
+
+const imageForm = document.querySelector('.changeImageForm');
+const newCoverURL = document.querySelector('.newImage');
+const coverImg = document.querySelector('.coverImg');
+const closeImgForm = document.querySelector('.closeBtn');
+const coverButton = document.querySelector('.changeCoverBtn');
+
+
+theme();
+mobileMenu();
+displayForm();
 changeCoverImage();
+storage();
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------
