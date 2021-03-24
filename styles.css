@@ -19,6 +19,10 @@ header {
     height: 35px;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
 .redColor {
     color: #e50815;
 }
@@ -70,9 +74,29 @@ header {
 .navBar ul li a {
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 
+.backToTop {
+    background-color: #913fe2;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 80%;
+    right: 8%;
+    padding: 0;
+}
+
+.topBtn:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+}
 /* Change Profile ------------------------------------------------------------------------------------------------------------------------*/
 
 .changeProfile {

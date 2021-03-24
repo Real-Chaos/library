@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 </head>
 <body>
-    <div class="logo">
+    <div class="logo" id="top">
         <div class="logoimg">
         <img src="images/logo.jpg" alt="">
         </div>
@@ -24,9 +24,9 @@
             <ul>
                 <li><img class="profileImg" src="images/profileImg.png" alt=""></li>
                 <li><a>Home</a></li>
-                <li>My Novels</li>
-                <li>My Anime</li>
-                <li>My Manga</li>
+                <li><a href="#novels">My Novels</a></li>
+                <li><a href="#anime">My Anime</a></li>
+                <li><a href="#manga">My Manga</a></li>
             </ul>
         </nav>
         <div class="mobileNav">
@@ -47,7 +47,7 @@
             </div>
             <img class="coverImg" src="images/libraryCover.jpeg" alt="">
         </div>
-        <div class="novelSection">
+        <div class="novelSection" id="novels">
 
             <h3>Novels</h3>
             <div class="emptyDiv">
@@ -55,8 +55,12 @@
             <img src="images/emptyLibrary.svg" alt="">
             </div>
         </div>
+
+        <div class="backToTop">
+            <a href="#top"><i class="fas fa-arrow-up topBtn"></i></a>
+        </div>
         
-        <div class="animeSection">
+        <div class="animeSection" id="anime">
             <h3>Anime</h3>
             <div class="emptyDiv">
             <h1 class="empty">Currently Empty</h1>
@@ -64,7 +68,7 @@
             </div>
         </div>
         
-        <div class="mangaSection">
+        <div class="mangaSection" id="manga">
             <h3>Manga</h3>
             <div class="emptyDiv">
                 <h1 class="empty">Currently Empty</h1>

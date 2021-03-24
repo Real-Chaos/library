@@ -45,10 +45,6 @@ function mobileMenu() {
 
 // Profile Image ---------------------------------------------------------------------------------------------------------------------------------------------------
 
-const profile = document.querySelector('.profileImg');
-const profileChange = document.querySelector('.changeProfile');
-let profileFormDisplayed = false;
-
 function changeProfile() {
     profile.addEventListener('click', ()=> {
         if(profileFormDisplayed === false) {
@@ -62,8 +58,6 @@ function changeProfile() {
         }
     });
 }
-
-changeProfile();
 
 // Cover Image -----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -91,6 +85,9 @@ function changeCoverImage() {
     });
 }
 
+// Back to top -----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 // Local Storage -----------------------------------------------------------------------------------------------------------------------------------------------------
 
 function storage() {
@@ -116,6 +113,11 @@ const mobileNavbar = document.querySelector('.hamburgerMenu');
 const mobileNavMediaQuery = window.matchMedia('(max-width: 500px)');
 
 
+const profile = document.querySelector('.profileImg');
+const profileChange = document.querySelector('.changeProfile');
+let profileFormDisplayed = false;
+
+
 const imageForm = document.querySelector('.changeImageForm');
 const newCoverURL = document.querySelector('.newImage');
 const coverImg = document.querySelector('.coverImg');
@@ -126,6 +128,7 @@ const coverButton = document.querySelector('.changeCoverBtn');
 theme();
 mobileMenu();
 displayForm();
+changeProfile();
 changeCoverImage();
 storage();
 
