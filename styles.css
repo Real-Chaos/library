@@ -165,19 +165,20 @@ a {
 
 /* Main Section ---------------------------------------------------------------------------------------------------------------------------------*/
 
-main {
-    padding: 7% 15%;
+.main {
+    padding: 7% 10%;
 }
 
-main div {
+.main div {
     padding: 2% 0;
+    width: 85%;
 }
 
-main div h3 {
+.main div h3 {
     padding: 3%;
 }
 
-main div img{
+.main div img{
     display: block;
     margin: auto;
     width: 40%;
@@ -200,10 +201,28 @@ main div img{
 }
 
 /* Cover Image ---------------------------------------------------------------------------------------------------------------------------------*/
+.changeCoverImage{
+    background-color: yellow;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 7%;
+}
+
 .coverImg {
-    width: 100%;
+    width: 80%;
+    margin-left: 20%;
     height: 400px;
     cursor: pointer;
+}
+
+/* Favorite ---------------------------------------------------------------------------------------------------------------------------------*/
+
+.favorite {
+    width: 20%;
+    background-color: red;
+    height: 14.3%;
+    position: absolute;
+    right: 32%;
 }
 
 /* Change Image ---------------------------------------------------------------------------------------------------------------------------------*/
@@ -211,7 +230,7 @@ main div img{
 .changeImageForm {
     background-color: black;
     width: 500px;
-    margin: auto;
+    margin: 200px auto;
     height: 200px;
     display: grid;
     justify-items: center;
@@ -303,7 +322,7 @@ main div img{
         display: block;
     }
 
-    .coverImg {
+    .coverImg, .favorite {
         height: 300px;
     }
 }
@@ -317,7 +336,7 @@ main div img{
         padding: 0;
     }
     
-    .coverImg {
+    .coverImg, .favorite{
         height: 200px;
     }
 }

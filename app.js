@@ -19,7 +19,6 @@ function theme() {
             themeChanger.classList.remove('fa-moon');
             themeChanger.classList.add('fa-sun');
             themeSlider.style.justifyContent = 'flex-end';
-            // themeChanger.style.color = 'black';
         }
     })
 }
@@ -87,6 +86,15 @@ function changeCoverImage() {
 
 // Back to top -----------------------------------------------------------------------------------------------------------------------------------------------------
 
+function backToTop() {
+    if(document.documentElement.scrollTop >= 20) {
+        button.style.display = 'flex';
+    }
+
+    else {
+        button.style.display = 'none';
+    }
+}
 
 // Local Storage -----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -116,6 +124,10 @@ const mobileNavMediaQuery = window.matchMedia('(max-width: 500px)');
 const profile = document.querySelector('.profileImg');
 const profileChange = document.querySelector('.changeProfile');
 let profileFormDisplayed = false;
+
+
+const button = document.querySelector('.backToTop');
+window.onscroll = () => backToTop();
 
 
 const imageForm = document.querySelector('.changeImageForm');
