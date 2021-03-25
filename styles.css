@@ -188,22 +188,9 @@ a {
 .novelSection {
     overflow: auto;
     width: 54.2%;
-    margin: 20px 10%;
-    padding-bottom: 400px;
+    margin: 20px 10% 50px;
     background: rgb(34, 34, 34);
 }
-
-/* .novelSection::-webkit-scrollbar {
-    display: none;
-} */
-/* .novelSection .novelh1 {
-    font-size: 20px;
-    border-bottom: 2px solid grey;
-    height: 30px;
-    width: 100%;
-    display: block;
-} */
-
 .novelh1 {
     border-bottom: 1px solid #312f40;
     padding: 15px;
@@ -242,14 +229,7 @@ a {
     color: white;
     cursor: pointer;
 }
-/* .novelSectionItem ul li::before {
-    content: "\2022";
-    color: red;
-    font-weight: bold;
-    display: inline-block; 
-    width: 1em;
-    margin-left: -1em;
-  } */
+
 
   .novelSectionItem button {
       height: 40px;
@@ -261,10 +241,11 @@ a {
       transition: 400ms;
   }
 
-  .novelSectionItem button:hover {
+.novelSectionItem button:hover {
       background: black;
       color: white;
-  }
+}
+
 .novelSectionItem button:focus {
     outline: none;
 }
@@ -458,8 +439,6 @@ a {
     background-color: #913fe2;
     height: 40px;
     width: 100%;
-    position: absolute;
-    bottom: 0px;
 }
 
 
