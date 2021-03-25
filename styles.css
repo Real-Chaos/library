@@ -526,7 +526,7 @@ p.length {
     position: absolute;
     top: 385px;
     right: 0;
-    margin-right: 10%;
+    margin: 1.8% 10%;
     background: rgb(34, 34, 34);
 }
 
