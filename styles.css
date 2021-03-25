@@ -227,7 +227,7 @@ a {
 
 .novelSectionItem  ul{
     position: absolute;
-    right: 165px;
+    left: 230px;
     bottom: 240px;
     align-self: center;
     list-style-type: none;
