@@ -623,6 +623,10 @@ p.length {
 
 /* Library Log */
 
+.libraryLog {
+    margin-bottom: 60px;
+}
+
 .libraryTabs {
     width: 95%;
     height: 50px;
@@ -675,12 +679,24 @@ p.length {
 }
 /* Footer --------------------------------------------------------------------------------------------------------------------------------- */
 
-.footer {
+.footer1 {
     background-color: #913fe2;
     height: 40px;
     width: 100%;
 }
 
+.footer2 .logo {
+    border-radius: 50%;
+    height: auto;
+    width: 100px;
+    display: block;
+    margin: 20px auto;
+}
+
+.footer2 p {
+    text-align: center;
+    margin-bottom: 40px
+}
 
 /* Mobile ---------------------------------------------------------------------------------------------------------------------------------*/
 
