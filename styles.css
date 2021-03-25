@@ -165,64 +165,241 @@ a {
 
 /* Main Section ---------------------------------------------------------------------------------------------------------------------------------*/
 
-.main {
-    padding: 7% 10%;
+/* .main {
+    padding: 0 10%;
 }
 
 .main div {
-    padding: 2% 0;
-    width: 85%;
+    display: flex;
+    width: 67.7%;
+    background-color: rgb(34, 34, 34);
+    height: auto; 
+} */
+
+
+
+
+.novelSection, .animeSection, .mangaSection {
+    margin-top: 20px;
 }
 
-.main div h3 {
-    padding: 3%;
+/* New Novel  ------------------------------------------------------------------------------------------------------------------------*/
+
+.novelSection {
+    overflow: auto;
+    width: 54.2%;
+    margin: 20px 10%;
+    padding-bottom: 400px;
+    background: rgb(34, 34, 34);
 }
 
-.main div img{
+/* .novelSection::-webkit-scrollbar {
+    display: none;
+} */
+/* .novelSection .novelh1 {
+    font-size: 20px;
+    border-bottom: 2px solid grey;
+    height: 30px;
+    width: 100%;
+    display: block;
+} */
+
+.novelh1 {
+    border-bottom: 1px solid #312f40;
+    padding: 15px;
+    font-size: 20px;
+}
+.title {
+    height: 50px;
+    margin-top: 50px;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.novelSectionItem {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 450px;
+    border-bottom: 1px solid #312f40;
+
+    position: relative;
+}
+
+.novelSectionItem  ul{
+    position: absolute;
+    right: 165px;
+    bottom: 240px;
+    align-self: center;
+    list-style-type: none;
+    padding: 10px;
+}
+
+.novelSectionItem ul li {
+    margin-top: 10px;
+    color: #999;
+}
+.novelSectionItem ul li:hover {
+    color: white;
+    cursor: pointer;
+}
+/* .novelSectionItem ul li::before {
+    content: "\2022";
+    color: red;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+  } */
+
+  .novelSectionItem button {
+      height: 40px;
+      border-radius: 34px;
+      display: block;
+      margin: 10px;
+      border: none;
+      color: white;
+      transition: 400ms;
+  }
+
+  .novelSectionItem button:hover {
+      background: black;
+      color: white;
+  }
+.novelSectionItem button:focus {
+    outline: none;
+}
+  .addToFavorite {
+      background: turquoise;
+      position: absolute;
+      bottom: 50px;
+  }
+
+  .top5 {
+      background: #ff6600;
+      position: absolute;
+      bottom: 95px;
+  }
+
+  .status {
+      background: #913fe2;
+  }
+  .remove {
+      background: red;
+      position: absolute;
+      bottom: 5px;
+  }
+.remove, .addToFavorite, .top5 {
+    width: 96% !important;
     display: block;
     margin: auto;
-    width: 40%;
+    /* background: red; */
+}
+ 
+.newNovel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-row-gap: 30%; */
+    justify-items: start;
 }
 
-.mangaSection {
-    padding-bottom: 20%;
+.newNovel img{
+    height: 250px;
+    width: 200px;
+    margin: 20px;
+    padding: 5px;
+    transition: 800ms;
+} 
+
+.newNovel img:hover {
+    opacity: 0.4;
 }
 /* Empty Sign ---------------------------------------------------------------------------------------------------------------------------------*/
 
 .emptyDiv {
-    border: solid red;
+    /* border: solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
+}
+
+.emptyImg {
+    display: none !important;
 }
 .empty {
     position: absolute;
     font-size: 90%;
+    display: none;
 }
 
 /* Cover Image ---------------------------------------------------------------------------------------------------------------------------------*/
 .changeCoverImage{
-    background-color: yellow;
+    /* background-color: rgb(34, 34, 34) ; */
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 7%;
+    margin-top: 2%;
+    position: relative;
 }
 
 .coverImg {
-    width: 80%;
+    width: 78%;
     margin-left: 20%;
-    height: 400px;
+    height: 300px;
     cursor: pointer;
 }
+
+.addToLibrary {
+    width: 25%;
+    height: 75%;
+    position: absolute;
+    right: 0;
+    margin-right: 10%;
+    background-color: rgb(34, 34, 34) ;
+
+}
+
+.addToLibrary h1 {
+    font-size: 20px;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+}
+
+.addNovel, .addAnime, .addManga {
+    width: 80%;
+    display: block;
+    margin: auto;
+    border-radius: 34px;
+    height: 20%;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: turquoise;
+    color: white;
+    border: none;
+    transition: 400ms;
+}
+
+.addAnime {
+    background-color: #ff6600;
+}
+
+.addManga {
+    background-color: #913fe2;
+}
+
+.addNovel:focus, .addAnime:focus, .addManga:focus {
+    outline: none;
+}
+
+.addNovel:hover, .addAnime:hover, .addManga:hover {
+    background-color: black;
+} 
 
 /* Favorite ---------------------------------------------------------------------------------------------------------------------------------*/
 
 .favorite {
-    width: 20%;
+    width: 28%;
     background-color: red;
-    height: 14.3%;
-    position: absolute;
-    right: 32%;
+    height: 300px;
 }
 
 /* Change Image ---------------------------------------------------------------------------------------------------------------------------------*/
@@ -230,8 +407,8 @@ a {
 .changeImageForm {
     background-color: black;
     width: 500px;
-    margin: 200px auto;
-    height: 200px;
+    margin: auto;
+  padding: 40px;
     display: grid;
     justify-items: center;
     gap: 20px;
@@ -249,9 +426,9 @@ a {
 .changeImageForm button {
     color: white;
     background-color: coral;
-    padding: 10px;
     border: solid white;
     border-radius: 20px;
+    padding: 10px;
 }
 
 .changeImageForm button:hover {
