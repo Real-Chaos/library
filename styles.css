@@ -24,6 +24,40 @@ html::-webkit-scrollbar-track {
     background: linear-gradient(90deg,#201c29,#201c29 1px,#100e17 0,#100e17);
 }
 
+/* SearchBar -----------------------------------------------------------------------------------------------------------------------------*/
+.top {
+    height: 100px;
+    background-color: black;
+    position: relative;
+    width: 100%;
+}
+
+.searchBar {
+    position: absolute;
+    left: 30%;
+    top: 35%;
+}
+
+.searchInput {
+    width: 300px;
+    height: 40px;
+    background-color: #17151b;
+    border: 1px solid #23202a;
+    color: white;
+    padding-right: 30px;
+}
+
+.searchInput::placeholder {
+    color: white;
+    padding-left: 10px;
+}
+.searchIcon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #999;
+}
+
 /* General ---------------------------------------------------------------------------------------------------------------------------------*/
 
 body {
@@ -52,10 +86,10 @@ a {
 }
 .logo img {
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
     border: solid #913fe2;
-    margin-left: 20%;
+    margin-left: 10%;
     align-self: flex-end;
     position: absolute;
     top: 8px;
@@ -216,7 +250,9 @@ p.length {
     justify-content: flex-end;
     align-items: center;
     margin-right: 20%;
-    justify-self: flex-end;
+    position: relative;
+    left: 85%;
+    top: 30%;
 }
 
 
