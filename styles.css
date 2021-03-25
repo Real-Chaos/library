@@ -379,8 +379,17 @@ a {
 
 .favorite {
     width: 28%;
-    background-color: red;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUPiYB8dCdTJN7DTmcliXhmof21Wdy0RIqng&usqp=CAU') center center no-repeat;
+    background-size: cover;
     height: 300px;
+    position: relative;
+}
+
+.crown {
+    position: absolute;
+    right: 0;
+    width: 70px;
+    height: 70px;
 }
 
 /* Change Image ---------------------------------------------------------------------------------------------------------------------------------*/
