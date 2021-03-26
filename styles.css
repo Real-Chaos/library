@@ -917,6 +917,7 @@ p.length {
     }
     .libraryLog h1 {
         font-size: 1.5rem;
+        margin-left: 10px;
     }
     .libraryGroup {
         padding: 0px;
@@ -927,7 +928,7 @@ p.length {
     .libraryGroup img {
         width: 90%;
         height: 200px;
-        padding-bottom: 5%;
+        padding: 6%;
     }
     .libraryGroup .stars {
         display: flex;
@@ -936,9 +937,9 @@ p.length {
         left: 10px;
     }
     .libraryGroup .length {
-        margin-left: 0;
+        margin-left: 10px;
         position: absolute;
-        bottom: 30px;
+        bottom: 35px;
     }
     
     .libraryGroup .type {
