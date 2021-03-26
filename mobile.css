@@ -1,0 +1,441 @@
+
+
+
+.top {
+    background-color: black;
+    height: 100px;
+    
+}
+
+.searchBar {
+    position: absolute;
+    top: 32%;
+    right: 30%;
+}
+
+.searchInput {
+    width: 100%;
+    height: 40px;
+    background-color: #17151b;
+    border: 1px solid #23202a;
+    color: white;
+    padding-right: 30px;
+
+}
+
+
+/* .changeCoverImage{
+    display: block;
+}
+
+.coverImg {
+    display: block;
+    width: 50%;
+    height: 100%;
+    cursor: pointer;
+} */
+
+
+/* .novelSection {
+    margin: 0;
+    padding: 0;
+}
+
+.novelSection img {
+    width: 20px;
+} */
+
+
+/* .addToLibrary {
+    width: 25%;
+    height: 75%;
+    position: relative;
+    right: 0;
+    top: 90%;
+    margin-right: 10%;
+    background-color: rgb(34, 34, 34) ;
+}
+
+.addToLibrary h1 {
+    font-size: 20px;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+}
+
+
+.favorite {
+    display: none;
+}
+.libraryTabs {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.libraryTabs p {
+    color: white;
+    background-color: #913fe2;
+    padding: 0.5% 2%;
+    margin: 30px;
+    font-size: 80%;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.libraryLogNovel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.libraryLog h1 {
+    font-size: 1.5rem;
+}
+.libraryGroup {
+    padding: 0px;
+    position: relative;
+    height: 300px;
+}
+
+.libraryGroup img {
+    width: 90%;
+    height: 200px;
+    padding-bottom: 5%;
+}
+.libraryGroup .stars {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+.libraryGroup .length {
+    margin-left: 0;
+    position: absolute;
+    bottom: 30px;
+}
+
+.libraryGroup .type {
+    position: absolute;
+    bottom: 35%;
+}
+
+.addToLibrary {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+    display: block;
+    background-color: rgb(34, 34, 34) ;
+}
+
+.addToLibrary h1 {
+    font-size: 20px;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+}
+
+.addNovel, .addAnime, .addManga {
+    width: 80%;
+    display: block;
+    margin: auto;
+    border-radius: 34px;
+    height: 40px;
+    margin-top: 4%;
+    cursor: pointer;
+    
+    color: white;
+    border: none;
+    transition: 400ms;
+}
+
+/* NOvel section */
+/* 
+.novelSection {
+    height: auto;
+    width: 100%;
+    background: rgb(34, 34, 34);
+    display: block !important;
+    margin-bottom: 20px;
+}
+
+.novelh1 {
+    border-bottom: 1px solid #312f40;
+    padding: 15px;
+    font-size: 20px;
+}
+.title {
+    height: 50px;
+    position: absolute;
+    left: 52%;
+    top: 10%;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.novelSectionItem {
+    display: block;
+    height: 340px;
+    border-bottom: 1px solid #312f40;
+    width: 100%;
+    position: relative;
+}
+
+.novelSectionItem  ul{
+    position: absolute;
+    left: 50%;
+    bottom: 55%;
+    align-self: center;
+    list-style-type: none;
+    padding: 10px;
+}
+
+.novelSectionItem ul li {
+    margin-top: 10px;
+    color: #999;
+}
+.novelSectionItem ul li:hover {
+    color: white;
+    cursor: pointer;
+}
+
+
+  .novelSectionItem button {
+      height: 40px;
+      border-radius: 34px;
+      display: block;
+      margin: 10px auto;
+      border: none;
+      color: white;
+     transition: 400ms;
+      background-color: rgb(34, 34, 34);
+      border: 2px solid #999;
+      
+  }
+
+.novelSectionItem button:hover {
+       background: black;
+      color: white;
+      border: 3px solid white;
+      transform: scale(1.03);
+}
+
+.novelSectionItem button:focus {
+    outline: none;
+}
+  .addToFavorite {
+      background: turquoise;
+      position: absolute;
+      bottom: 50px;
+  }
+
+  .top5 {
+      background: #ff6600;
+      position: absolute;
+      bottom: 95px;
+  }
+
+  .status {
+      background: #913fe2;
+  }
+  .remove {
+      background: red;
+      position: absolute;
+      bottom: 5px;
+  }
+.remove, .addToFavorite, .top5 {
+    width: 96% !important;
+    display: block;
+    margin: auto;
+    background: red; 
+}
+ 
+.newNovel {
+    display: block;
+   
+}
+
+.newNovel img{
+    height: 150px;
+    width: 40%;
+    transition: 800ms;
+    display: inline-block;
+} 
+
+.newNovel img:hover {
+    opacity: 0.4;
+}
+.stars {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    font-size: 15px;
+}
+.checked {
+    color: yellow;
+}  */
+
+
+/* Recently Added  ---------------------------------------------------------------------------------------------------------------------------------*/
+/* 
+.recentlyAddedList {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+height: 100%;
+}
+
+.recentlyAdded img {
+display: block;
+width: 100%;
+height: 60%;
+padding: 10px;
+margin-top: 10px;
+}
+
+.recentlyAddedGroup {
+position: relative;
+}
+
+.recentlyAdded h1 {
+margin-left: 10px;
+font-size: 20px;
+margin-top: 5px;
+}
+.type {
+width: auto;
+padding: 2px 5px;
+background-color: rgba(0, 0, 0, 0.6);
+position: absolute;
+bottom: 43%;
+left: 20px;
+text-align: center;
+}
+
+.type p {
+color: white;
+}
+
+p {
+color: #999;
+}
+p:hover {
+color: white;
+} 
+
+p.length {
+margin-left: 10px;
+margin-top: 1px;
+}
+
+.recentlyAddedGroup .stars {
+display: flex;
+position: absolute;
+left: 10px;
+bottom: 1px ;
+} */
+
+/* Favorite ---------------------------------------------------------------------------------------------------------------------------------*/
+/* 
+.favorite {
+width: 28%;
+background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUPiYB8dCdTJN7DTmcliXhmof21Wdy0RIqng&usqp=CAU') center center no-repeat;
+background-size: cover;
+height: 100%;
+position: relative;
+}
+
+.crown {
+position: absolute;
+right: 0;
+width: 50%;
+height: 30%;
+}
+
+.checked {
+color: yellow;
+}
+
+.topFav5 {
+width: 100%;
+position: relative;
+top: 120%;
+margin: 5% 0;
+background: rgb(34, 34, 34);
+}
+
+.tabs {
+height: 40px;
+background: #333;
+margin: 0%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.tabs ul {
+list-style-type: none;
+display: flex;
+justify-content: space-around;
+}
+
+.tabs ul li {
+background-color: #913fe2;
+padding: 2% 10%;
+margin: 10%;
+border-radius: 5px;
+}
+
+.favNovelList {
+background: rgb(34, 34, 34);
+
+}
+
+.favNovelList .number {
+border: 1px solid #888;
+color: #888;
+display: inline-block;
+padding: 5% 7%;
+text-align: center;
+border-radius: 7px;
+height: 40%;
+margin: 5%;
+}
+
+.novelGroup {
+display: flex;
+align-items: center;
+position: relative;
+border-bottom: 1px solid #312f40;
+padding: 3%;
+}
+
+.novelGroup .info {
+margin-top: 2px;
+}
+
+.novelGroup p {
+font-size: 0.8rem;
+color: #999;
+margin-left: 25%;
+margin-top: 1px;
+}
+
+.novelGroup p:hover {
+color: white;
+}
+
+.novelGroup h1 {
+position: absolute;
+font-size: 1rem;
+bottom: 45%;
+left: 60%;
+padding-top: 1%;
+}
+
+.novelGroup img {
+width: 30%;
+height: auto;
+}
+
+.novelGroup .stars {
+bottom: 10%;
+left: 58%;
+}  */
