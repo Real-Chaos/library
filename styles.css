@@ -25,41 +25,6 @@ html::-webkit-scrollbar-track {
     background: linear-gradient(90deg,#201c29,#201c29 1px,#100e17 0,#100e17);
 }
 
-/* Top -----------------------------------------------------------------------------------------------------------------------------*/
-.top {
-    height: 100px;
-    background-color: black;
-    position: relative;
-    width: 100%;
-}
-
-/* Search Bar-----------------------------------------------------------------------------------------------------------------------------*/
-
-.searchBar {
-    position: absolute;
-    left: 30%;
-    top: 35%;
-}
-
-.searchInput {
-    width: 300px;
-    height: 40px;
-    background-color: #17151b;
-    border: 1px solid #23202a;
-    color: white;
-    padding-right: 30px;
-}
-
-.searchInput::placeholder {
-    color: white;
-    padding-left: 10px;
-}
-.searchIcon {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    color: #999;
-}
 
 /* Body ---------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -68,6 +33,14 @@ body {
     color: white;
     width: 100%;
     
+}
+
+/* Top -----------------------------------------------------------------------------------------------------------------------------*/
+.top {
+    height: 100px;
+    background-color: black;
+    position: relative;
+    width: 100%;
 }
 
 /*  Header -----------------------------------------------------------------------------------------------------------------------------*/
@@ -98,6 +71,35 @@ a {
     position: absolute;
     top: 8px;
 }
+
+/* Search Bar-----------------------------------------------------------------------------------------------------------------------------*/
+
+.searchBar {
+    position: absolute;
+    left: 30%;
+    top: 35%;
+}
+
+.searchInput {
+    width: 300px;
+    height: 40px;
+    background-color: #17151b;
+    border: 1px solid #23202a;
+    color: white;
+    padding-right: 30px;
+}
+
+.searchInput::placeholder {
+    color: white;
+    padding-left: 10px;
+}
+.searchIcon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #999;
+}
+
 /* Navbar ---------------------------------------------------------------------------------------------------------------------------------*/
 .navBar {
     margin-left: 20%;
@@ -133,26 +135,6 @@ a {
     cursor: pointer;
 }
 
-/* Back To Top -----------------------------------------------------------------------------------------------------------------------------*/
-.backToTop {
-    background-color: #913fe2;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 80%;
-    right: 4%;
-    padding: 0;
-}
-
-.topBtn:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 50%;
-}
 /* Change Profile Form------------------------------------------------------------------------------------------------------------------------*/
 
 .changeProfile {
@@ -744,6 +726,27 @@ p.length {
 .footer2 p {
     text-align: center;
     margin-bottom: 40px
+}
+
+/* Back To Top -----------------------------------------------------------------------------------------------------------------------------*/
+.backToTop {
+    background-color: #913fe2;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 80%;
+    right: 4%;
+    padding: 0;
+}
+
+.topBtn:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
 }
 
 /* Mobile Nav---------------------------------------------------------------------------------------------------------------------------------*/
