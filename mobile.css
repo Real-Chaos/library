@@ -243,7 +243,7 @@
 
 .addToLibrary {
     width: 33%;
-    height: 90%;
+    height: 60%;
     position: absolute;
     right: 0;
     margin-right: 3%;
@@ -371,7 +371,7 @@
     .topFav5 {
         width: 33%;
         position: absolute;
-        top: 420px;
+        top: 400px;
         right: 0;
         margin: 7% 3%;
         background: rgb(34, 34, 34);
@@ -381,7 +381,7 @@
         .topFav5 {
             width: 33%;
             position: absolute;
-            top: 450px;
+            top: 300px;
             right: 0;
             margin: 7% 3%;
             background: rgb(34, 34, 34);
