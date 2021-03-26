@@ -26,12 +26,16 @@
 
 
     /* Recently Added  ---------------------------------------------------------------------------------------------------------------------------------*/
-.recentlyAddedList, .libraryLogNovel {
+.recentlyAddedList {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         height: 100%;
      }
      
+     .libraryLogNovel {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+     }
      .recentlyAdded img {
          display: block;
          width: 100%;
@@ -88,22 +92,33 @@
          height: 200px;
      }
 
+     .libraryGroup h1 {
+         padding: 2px 8%;
+         position: absolute;
+         top: 5%;
+         left: 35%;
+         font-size: 20px;
+         background-color: rgba(0, 0, 0, 0.7);
+     }
+
      .libraryGroup .stars {
         display: flex;
         position: absolute;
         bottom: 10px;
-        left: 10px;
+        left: 30%;
     }
     .libraryGroup .length {
         margin-left: 0;
         margin: 20px 0;
         position: absolute;
         bottom: 15px;
+        display: none;
     }
     
     .libraryGroup .type {
         position: absolute;
-        bottom: 47%;
+        bottom: 18%;
+        left: 20%;
     } 
 
     .libraryTabs {
@@ -123,6 +138,13 @@
         padding: 0.5% 5%;
         margin: 4%;
         border-radius: 5px;
+    }
+
+    .libraryGroup img {
+        width: 75%;
+        height: 90%;
+        display: block;
+        margin: auto;
     }
 
     /* New Novel  ------------------------------------------------------------------------------------------------------------------------*/

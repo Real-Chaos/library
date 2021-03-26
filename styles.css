@@ -17,7 +17,7 @@ html::-webkit-scrollbar-thumb {
     background: linear-gradient(black);
     border-radius: 30px;
     box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
-    border: 1px solid white;
+    border: 1px solid white;    
 }
 
 /* The vertical scrollbar background */
@@ -25,13 +25,15 @@ html::-webkit-scrollbar-track {
     background: linear-gradient(90deg,#201c29,#201c29 1px,#100e17 0,#100e17);
 }
 
-/* SearchBar -----------------------------------------------------------------------------------------------------------------------------*/
+/* Top -----------------------------------------------------------------------------------------------------------------------------*/
 .top {
     height: 100px;
     background-color: black;
     position: relative;
     width: 100%;
 }
+
+/* Search Bar-----------------------------------------------------------------------------------------------------------------------------*/
 
 .searchBar {
     position: absolute;
@@ -59,7 +61,7 @@ html::-webkit-scrollbar-track {
     color: #999;
 }
 
-/* General ---------------------------------------------------------------------------------------------------------------------------------*/
+/* Body ---------------------------------------------------------------------------------------------------------------------------------*/
 
 body {
     background-color: #16151d;
@@ -68,17 +70,17 @@ body {
     
 }
 
+/*  Header -----------------------------------------------------------------------------------------------------------------------------*/
+
 header {
     background-color: #913fe2;
     height: 35px;
 }
 
+
 a {
     color: white;
     text-decoration: none;
-}
-.redColor {
-    color: #e50815;
 }
 
 .logo {
@@ -131,7 +133,7 @@ a {
     cursor: pointer;
 }
 
-
+/* Back To Top -----------------------------------------------------------------------------------------------------------------------------*/
 .backToTop {
     background-color: #913fe2;
     height: 50px;
@@ -151,7 +153,7 @@ a {
     padding: 10px;
     border-radius: 50%;
 }
-/* Change Profile ------------------------------------------------------------------------------------------------------------------------*/
+/* Change Profile Form------------------------------------------------------------------------------------------------------------------------*/
 
 .changeProfile {
     background-color: black;
@@ -186,9 +188,9 @@ a {
 /* Recently Added  ---------------------------------------------------------------------------------------------------------------------------------*/
 
 .recentlyAddedList {
-    display: flex;
-    justify-content: center;
-    height: 260px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: 100%;
 }
 
 .recentlyAdded img {
@@ -206,14 +208,13 @@ a {
 .recentlyAdded h1 {
     margin-left: 10px;
     font-size: 20px;
-    margin-top: 10px;
 }
 .type {
     width: auto;
     padding: 2px 5px;
     background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
-    bottom: 110px;
+    bottom: 44%;
     left: 20px;
     text-align: center;
 }
@@ -231,7 +232,7 @@ p:hover {
 
 p.length {
     margin-left: 10px;
-    margin-top: 10px;
+    
 }
 
 .recentlyAddedGroup .stars {
@@ -283,16 +284,6 @@ p.length {
     width: 54.2%;
     height: 100%;
 }
-/*
-.main div {
-    display: flex;
-    width: 67.7%;
-    background-color: rgb(34, 34, 34);
-    height: auto; 
-} */
-
-
-
 
 .novelSection, .animeSection, .mangaSection {
     margin-top: 20px;
@@ -371,31 +362,34 @@ p.length {
 .novelSectionItem button:focus {
     outline: none;
 }
-  .addToFavorite {
-      background: turquoise;
-      position: absolute;
-      bottom: 50px;
-  }
 
-  .top5 {
-      background: #ff6600;
-      position: absolute;
-      bottom: 95px;
-  }
+.addToFavorite {
+    background: turquoise;
+    position: absolute;
+    bottom: 50px;
+}
 
-  .status {
-      background: #913fe2;
-  }
-  .remove {
-      background: red;
-      position: absolute;
-      bottom: 5px;
-  }
+.top5 {
+    background: #ff6600;
+    position: absolute;
+    bottom: 95px;
+}
+
+.status {
+    background: #913fe2;
+}
+
+.remove {
+    background: red;
+    position: absolute;
+    bottom: 5px;
+  
+}
+
 .remove, .addToFavorite, .top5 {
     width: 96% !important;
     display: block;
     margin: auto;
-    /* background: red; */
 }
  
 .newNovel {
@@ -446,7 +440,6 @@ p.length {
 
 /* Cover Image ---------------------------------------------------------------------------------------------------------------------------------*/
 .changeCoverImage{
-    /* background-color: rgb(34, 34, 34) ; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 2%;
@@ -459,6 +452,8 @@ p.length {
     height: 100%;
     cursor: pointer;
 }
+
+/* Add To Library -----------------------------------------------------------------------------------------------------------------------------*/
 
 .addToLibrary {
     width: 25%;
@@ -479,7 +474,7 @@ p.length {
     margin-top: 4% !important;
 }
 .addNovel, .addAnime, .addManga {
-    width: 80%;
+    width: 90%;
     display: block;
     margin: auto;
     border-radius: 34px;
@@ -533,6 +528,8 @@ p.length {
 .checked {
     color: yellow;
 }
+
+/* Top 5 -----------------------------------------------------------------------------------------------------------------------------*/
 
 .topFav5 {
     width: 25%;
@@ -672,7 +669,7 @@ p.length {
     color: red;
 }
 
-/* Library Log */
+/* Library Log -----------------------------------------------------------------------------------------------------------------------------*/
 
 .libraryLog {
     margin-bottom: 60px;
