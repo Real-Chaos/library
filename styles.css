@@ -462,7 +462,7 @@ p.length {
 
 .addToLibrary {
     width: 25%;
-    height: 100%;
+    height: 80%;
     position: absolute;
     right: 0;
     margin-right: 10%;
@@ -476,15 +476,15 @@ p.length {
 }
 
 .addNovel {
-    margin-top: 15% !important;
+    margin-top: 4% !important;
 }
 .addNovel, .addAnime, .addManga {
     width: 80%;
     display: block;
     margin: auto;
     border-radius: 34px;
-    height: 30px;
-    margin-top: 3%;
+    height: 20%;
+    margin-top: 2%;
     cursor: pointer;
     background-color: turquoise;
     color: white;
@@ -537,7 +537,7 @@ p.length {
 .topFav5 {
     width: 25%;
     position: absolute;
-    top: 520px;
+    top: 46%;
     right: 0;
     margin: 8% 10%;
     background: rgb(34, 34, 34);
@@ -715,18 +715,18 @@ p.length {
 .libraryGroup .stars {
     display: flex;
     position: absolute;
-    bottom: 10px;
+    bottom: 40px;
     left: 10px;
 }
 .libraryGroup .length {
     margin-left: 0;
     position: absolute;
-    bottom: 35px;
+    bottom: 75px;
 }
 
 .libraryGroup .type {
     position: absolute;
-    bottom: 55%;
+    bottom: 60%;
 }
 /* Footer --------------------------------------------------------------------------------------------------------------------------------- */
 
