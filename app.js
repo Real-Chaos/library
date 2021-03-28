@@ -85,44 +85,78 @@ function changeCoverImage() {
 }
 
 // Add Novel -----------------------------------------------------------------------------------------------------------------------------------------------------
+let myNovels = [];
+
 let addNovel = document.querySelector('.addNovel');
 let novelForm = document.querySelector('.newNovelForm');
-let closeForm = document.querySelector('.newNovelForm h4');
-let formSubmition = document.querySelector('.submit')
-let myNovels = [];
-let novelTitle = document.querySelector('.novelTitle');
+let novelElement = document.querySelector('.newNovel');
 
-function Novel(title, pages, status, author, summary, link, img) {
+
+let form = document.querySelector('.form');
+let novelTitle = document.querySelector('.novelTitle');
+let novelAuthor = document.querySelector('.novelAuthor');
+let novelPages = document.querySelector('.novelPages');
+let novelImgSrc = document.querySelector('.novelImg');
+let novelStatus = document.querySelector('.novelStatus');
+let closeForm = document.querySelector('.newNovelForm h4');
+
+function Novel(title, author, pages, img, status) {
     this.title = title,
-    this.pages = pages,
-    this.status = status,
     this.author = author,
-    this.favorite = false,
-    this.top5 = false,
-    this.summary = summary,
-    this.link = link,
-    this.img = img
+    this.pages = pages,
+    this.img = img,
+    this.status = status
 }
 
 function displayForm() {
     addNovel.addEventListener('click', ()=> {
         novelForm.style.display = 'block';
+        form.reset()
     });
     closeForm.addEventListener('click', ()=> {
         novelForm.style.display = 'none';
+        form.reset()
     })
 }
 
 displayForm();
 
 function addNovelToPage() {
-    formSubmition.addEventListener('click', ()=> {
-        console.log('hi')
+    form.addEventListener('submit', (event) => {
+        event.preventDefault()
+        let newNovel = new Novel(novelTitle.value, novelAuthor.value, novelPages.value, novelImgSrc.value, novelStatus.values);
+        myNovels.push(newNovel)
+        novelForm.style.display = 'none';
+        createNovelOnPage();
     })
-    
 }
 
 addNovelToPage();
+
+function createNovelOnPage() {
+    let novelItem = document.createElement('div');
+    let novelImg = document.createElement('img');
+    let titleOfNovel = document.createElement('h1');
+    let markFavorite = document.createElement('button');
+    let addToTop5 = document.createElement('button');
+    let remove = document.createElement('button');
+    novelItem.classList.add('novelSectionItem');
+    titleOfNovel.classList.add('title');
+    markFavorite.classList.add('addToFavorite');
+    addToTop5.classList.add('top5');
+    remove.classList.add('remove');
+    novelImg.src = novelImgSrc.value;
+    titleOfNovel.textContent = novelTitle.value;
+    markFavorite.textContent = 'Mark Favorite';
+    addToTop5.textContent = 'Add to Top 5';
+    remove.textContent = 'Remove';
+    novelElement.appendChild(novelItem);
+    novelItem.appendChild(novelImg);
+    novelItem.appendChild(titleOfNovel);
+    novelItem.appendChild(markFavorite)
+    novelItem.appendChild(addToTop5)
+    novelItem.appendChild(remove)
+}
 
 // Back to top -----------------------------------------------------------------------------------------------------------------------------------------------------
 
