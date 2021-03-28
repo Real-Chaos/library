@@ -158,6 +158,16 @@ function createNovelOnPage() {
     novelItem.appendChild(remove)
 }
 
+let hideItems = document.querySelector('.hideNovel');
+
+function hide() {
+    hideItems.addEventListener('click', ()=> {
+        novelElement.style.display = 'none';
+    })
+}
+
+hide();
+
 // Back to top -----------------------------------------------------------------------------------------------------------------------------------------------------
 
 function backToTop() {
