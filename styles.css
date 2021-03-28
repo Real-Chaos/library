@@ -167,6 +167,68 @@ a {
     outline: none;
 }
 
+/* New Novel Form ---------------------------------------------------------------------------------------------------------------------------------*/
+.newNovelForm {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    top: 20%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 25%;
+    height: auto;
+    display: none;
+}
+
+
+.newNovelForm input, .newNovelForm textarea, .newNovelForm select{
+    display: block;
+    background-color: rgb(34, 34, 34);
+    outline: none;
+    color: white;
+    margin: 1% auto;
+    background-color: #17151b;
+    border: 1px solid #23202a;
+    border-radius: 5px;
+    height: 30px;
+    width: 80% !important;
+    padding: 5px;
+}
+
+.newNovelForm textarea {
+    height: 100% !important;
+}
+
+.newNovelForm h4 {
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    top: 0;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+}
+
+.newNovelForm h4:hover {
+    color: red;
+}
+.newNovelForm .textarea {
+    height: 100%;
+}
+
+.newNovelForm .textarea::-webkit-scrollbar {
+    width: 10px;
+    height: 30px;
+}
+
+.newNovelForm .textarea::-webkit-scrollbar-thumb {
+    background: linear-gradient(black);
+    border-radius: 30px;
+    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+    border: 1px solid white;    
+}
+
 /* Recently Added  ---------------------------------------------------------------------------------------------------------------------------------*/
 
 .recentlyAddedList {
@@ -181,6 +243,16 @@ a {
     height: 60%;
     padding: 10px;
     margin-top: 10px;
+}
+
+.novelSection .hide {
+    position: absolute;
+    right: 4%;
+    top: 3.5%;
+    padding: .3% 3%;
+    background-color: #913fe2;
+    outline: none;
+    border-radius: 8px;
 }
 
 .recentlyAddedGroup {
@@ -278,6 +350,7 @@ p.length {
     width: 100%;
     margin: 20px 0 10px 18.5%;
     background: rgb(34, 34, 34);
+    position: relative;
 }
 .novelh1 {
     border-bottom: 1px solid #312f40;
@@ -432,7 +505,7 @@ p.length {
 .coverImg {
     width: 78%;
     margin-left: 20%;
-    height: 500px;
+    height: 400px;
     cursor: pointer;
 }
 
@@ -517,7 +590,7 @@ p.length {
 .topFav5 {
     width: 25%;
     position: absolute;
-    top: 66%;
+    top: 45%;
     right: 0;
     margin: 8% 10%;
     background: rgb(34, 34, 34);
@@ -570,7 +643,8 @@ p.length {
 }
 
 .novelGroup .info {
-    margin-top: 2px;
+    margin-top: 4.6%;
+    margin-left: 2.7%;
 }
 
 .novelGroup p {

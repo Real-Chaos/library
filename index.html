@@ -44,7 +44,7 @@
 <!----- Profile Change ---------------------------------------------------------------------------------------------------------------------->
     <div class="changeProfile">
         <label for="Profile Change">Enter URL</label>
-        <input type="text" placeholder="Enter URL">
+        <input type="url" placeholder="Enter URL">
     </div>
     <main>
 <!----- Cover Change ---------------------------------------------------------------------------------------------------------------------->
@@ -53,7 +53,7 @@
             <div class="changeImageForm">
                 <h4 class="closeBtn">x</h4>
                 <h1>Change Cover</h1>
-                <input class="newImage" type="text" placeholder="Enter Image URL">
+                <input class="newImage" type="url" placeholder="Enter Image URL">
                 <button class="changeCoverBtn">Change Cover!</button>
             </div>
             <img class="coverImg" src="images/libraryCover.jpeg" alt="">
@@ -105,6 +105,7 @@
         <div class="main">
             <div class="recentlyAdded novelSection">
                 <h1 class="novelh1">Recently Added</h1>
+                <button class="hide">Hide</button>
                 <div class="recentlyAddedList">
                     <div class="recentlyAddedGroup">
                         <img src="https://blog.cloudflare.com/content/images/image00.jpg" alt="">
@@ -129,9 +130,10 @@
         
             <div class="novelSection" id="novels">
             <h1 class="novelh1">Novels</h1>
+            <button class="hide">Hide</button>
             <div class="newNovel">
                 <div class="novelSectionItem">
-                    <img src="https://blog.cloudflare.com/content/images/image00.jpg" alt="">
+                    <!-- <img src="https://blog.cloudflare.com/content/images/image00.jpg" alt="">
                     <h1 class="title">Title</h1>
                     <ul>
                        <li>Author: </li>
@@ -149,7 +151,7 @@
                         </div>
                     <button class="addToFavorite">Add to favorite</button>
                     <button class="top5">Add to Top 5</button>
-                    <button class="remove">Remove</button>
+                    <button class="remove">Remove</button> -->
                 </div>
             
             </div>
@@ -158,10 +160,30 @@
             <img class="emptyImg" src="images/emptyLibrary.svg" alt="">
             </div> -->
         </div>
+<!----- Novel Form ---------------------------------------------------------------------------------------------------------------------->
+<div class="newNovelForm">
+    <h4>x</h4>
+    <form class="form">
+        <input type="text" name="Title" class="novelTitle" placeholder="Title *" required>
+        <input type="text" name="Author" class="novelAuthor" placeholder="Author *" required>
+        <input type="number" name="Pages" class="novelPages" placeholder="Pages *" required>
+        <input type="url" name="Image" class="novelImg" placeholder="Image URL *" required>
+        <input type="url" name="Novel Link" class="novelLink" placeholder="Novel Link">
+        <textarea name="Summary" id="" cols="30" class="novelSummary" rows="10" placeholder="Enter Summary Here..." class="textarea" maxlength="300"></textarea>
+        <select class="read" name="" id="read" required>
+            <option value="Read">Read</option>
+            <option value="Not Read">Not Read</option>
+        </select>
+        <input class="novelRating" type="range" name="Ratings" id="" min="1" max="5" required>
+        <input type="reset" value="Reset">
+        <input type="submit" class="submit">
+    </form>
+</div>
 
 <!----- Anime List ---------------------------------------------------------------------------------------------------------------------->
         <div class="novelSection animeSection" id="anime">
             <h1 class="novelh1">Anime</h1>
+            <button class="hide">Hide</button>
             <div class="newNovel">
                 <div class="novelSectionItem">
                     <img src="https://blog.cloudflare.com/content/images/image00.jpg" alt="">
@@ -195,6 +217,7 @@
 <!----- Manga List ---------------------------------------------------------------------------------------------------------------------->
         <div class="novelSection mangaSection" id="manga">
             <h1 class="novelh1">Manga</h1>
+            <button class="hide">Hide</button>
             <div class="newNovel">
                 <div class="novelSectionItem">
                     <img src="https://blog.cloudflare.com/content/images/image00.jpg" alt="">
@@ -230,6 +253,7 @@
 
         <div class="libraryLog novelSection">
             <h1 class="novelh1">Library Log</h1>
+            <button class="hide">Hide</button>
             <div class="libraryTabs">
                 <p>Completed</p>
                 <p>On-Going</p>

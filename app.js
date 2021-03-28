@@ -84,6 +84,46 @@ function changeCoverImage() {
     });
 }
 
+// Add Novel -----------------------------------------------------------------------------------------------------------------------------------------------------
+let addNovel = document.querySelector('.addNovel');
+let novelForm = document.querySelector('.newNovelForm');
+let closeForm = document.querySelector('.newNovelForm h4');
+let formSubmition = document.querySelector('.submit')
+let myNovels = [];
+let novelTitle = document.querySelector('.novelTitle');
+
+function Novel(title, pages, status, author, summary, link, img) {
+    this.title = title,
+    this.pages = pages,
+    this.status = status,
+    this.author = author,
+    this.favorite = false,
+    this.top5 = false,
+    this.summary = summary,
+    this.link = link,
+    this.img = img
+}
+
+function displayForm() {
+    addNovel.addEventListener('click', ()=> {
+        novelForm.style.display = 'block';
+    });
+    closeForm.addEventListener('click', ()=> {
+        novelForm.style.display = 'none';
+    })
+}
+
+displayForm();
+
+function addNovelToPage() {
+    formSubmition.addEventListener('click', ()=> {
+        console.log('hi')
+    })
+    
+}
+
+addNovelToPage();
+
 // Back to top -----------------------------------------------------------------------------------------------------------------------------------------------------
 
 function backToTop() {
