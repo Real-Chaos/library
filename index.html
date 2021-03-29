@@ -105,7 +105,7 @@
         <div class="main">
             <div class="recentlyAdded novelSection">
                 <h1 class="novelh1">Recently Added</h1>
-                <button class="hide">Hide</button>
+                <!-- <button class="hide">Hide</button> -->
                 <!-- <div class="recentlyAddedList">
                     <div class="recentlyAddedGroup">
                         <img src="https://blog.cloudflare.com/content/images/image00.jpg" alt="">
@@ -184,8 +184,8 @@
 <!----- Anime List ---------------------------------------------------------------------------------------------------------------------->
         <div class="novelSection animeSection" id="anime">
             <h1 class="novelh1">Anime</h1>
-            <button class="hide">Hide</button>
-            <div class="newNovel">
+            <button class="hide hideAnime">Hide</button>
+            <div class="newNovel newAnime">
                 <!-- <div class="novelSectionItem">
                     <img src="https://blog.cloudflare.com/content/images/image00.jpg" alt="">
                     <h1 class="title">Title</h1>
@@ -215,11 +215,32 @@
                 </div> -->
         </div>
 
+<!----- Anime Form ---------------------------------------------------------------------------------------------------------------------->
+<div class="newNovelForm animeFormElement">
+    <h4>x</h4>
+    <form class="animeForm">
+        <input type="text" name="Title" class="animeTitle" placeholder="Title *" required>
+        <input type="text" name="Author" class="animeAuthor" placeholder="Creator *" required>
+        <input type="number" name="Pages" class="animePages" placeholder="Episodes *" required>
+        <input type="url" name="Image" class="animeImg" placeholder="Image URL *" required>
+        <!-- <input type="url" name="Novel Link" class="novelLink" placeholder="Novel Link"> -->
+        <!-- <textarea name="Summary" id="" cols="30" class="novelSummary" rows="10" placeholder="Enter Summary Here..." class="textarea" maxlength="300"></textarea> -->
+        <select class="animeStatus" name="" id="read" required>
+            <option value="">Status</option>
+            <option value="Read">Read</option>
+            <option value="Not Read">Not Read</option>
+        </select>
+        <input class="novelRating" type="range" name="Ratings" id="" min="1" max="5" required>
+        <input type="reset" value="Reset">
+        <input type="submit" class="submit">
+    </form>
+</div>
+
 <!----- Manga List ---------------------------------------------------------------------------------------------------------------------->
         <div class="novelSection mangaSection" id="manga">
             <h1 class="novelh1">Manga</h1>
-            <button class="hide">Hide</button>
-            <div class="newNovel">
+            <button class="hide hideManga">Hide</button>
+            <div class="newNovel newManga">
                 <!-- <div class="novelSectionItem">
                     <img src="https://blog.cloudflare.com/content/images/image00.jpg" alt="">
                     <h1 class="title">Title</h1>
@@ -249,12 +270,31 @@
             </div> -->
         </div>
         
-
+<!----- Manga Form ---------------------------------------------------------------------------------------------------------------------->
+<div class="newNovelForm mangaFormElement">
+    <h4>x</h4>
+    <form class="mangaForm">
+        <input type="text" name="Title" class="mangaTitle" placeholder="Title *" required>
+        <input type="text" name="Author" class="mangaAuthor" placeholder="Creator *" required>
+        <input type="number" name="Pages" class="mangaPages" placeholder="Episodes *" required>
+        <input type="url" name="Image" class="mangaImg" placeholder="Image URL *" required>
+        <!-- <input type="url" name="Novel Link" class="novelLink" placeholder="Novel Link"> -->
+        <!-- <textarea name="Summary" id="" cols="30" class="novelSummary" rows="10" placeholder="Enter Summary Here..." class="textarea" maxlength="300"></textarea> -->
+        <select class="mangaStatus" name="" id="read" required>
+            <option value="">Status</option>
+            <option value="Read">Read</option>
+            <option value="Not Read">Not Read</option>
+        </select>
+        <input class="novelRating" type="range" name="Ratings" id="" min="1" max="5" required>
+        <input type="reset" value="Reset">
+        <input type="submit" class="submit">
+    </form>
+</div>
 <!----- Library Logs ---------------------------------------------------------------------------------------------------------------------->
 
         <div class="libraryLog novelSection">
             <h1 class="novelh1">Library Log</h1>
-            <button class="hide">Hide</button>
+            <!-- <button class="hide">Hide</button> -->
             <!-- <div class="libraryTabs">
                 <p>Completed</p>
                 <p>On-Going</p>

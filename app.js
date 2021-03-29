@@ -86,12 +86,11 @@ function changeCoverImage() {
 
 // Add Novel -----------------------------------------------------------------------------------------------------------------------------------------------------
 let myNovels = [];
+let novelElement = Array.from(document.querySelectorAll('.newNovel'));
+
 
 let addNovel = document.querySelector('.addNovel');
 let novelForm = document.querySelector('.newNovelForm');
-let novelElement = document.querySelector('.newNovel');
-
-
 let form = document.querySelector('.form');
 let novelTitle = document.querySelector('.novelTitle');
 let novelAuthor = document.querySelector('.novelAuthor');
@@ -100,40 +99,42 @@ let novelImgSrc = document.querySelector('.novelImg');
 let novelStatus = document.querySelector('.novelStatus');
 let closeForm = document.querySelector('.newNovelForm h4');
 
-function Novel(title, author, pages, img, status) {
+
+let addAnime = document.querySelector('.addAnime');
+let animeFormElement = document.querySelector('.animeFormElement');
+let animeForm = document.querySelector('.animeForm')
+let animeTitle = document.querySelector('.animeTitle');
+let animeAuthor = document.querySelector('.animeAuthor');
+let animePages = document.querySelector('.animePages');
+let animeImgSrc = document.querySelector('.animeImg');
+let animeStatus = document.querySelector('.animeStatus');
+let animeClose = document.querySelector('.animeFormElement h4')
+
+
+let addManga = document.querySelector('.addManga');
+let mangaFormElement = document.querySelector('.mangaFormElement');
+let mangaForm = document.querySelector('.mangaForm')
+let mangaTitle = document.querySelector('.mangaTitle');
+let mangaAuthor = document.querySelector('.mangaAuthor');
+let mangaPages = document.querySelector('.mangaPages');
+let mangaImgSrc = document.querySelector('.mangaImg');
+let mangaStatus = document.querySelector('.mangaStatus');
+let mangaClose = document.querySelector('.mangaFormElement h4')
+
+
+
+function Novel(title, author, pages, img, status, appendTo, novelHide, hideNovelSection) {
     this.title = title,
     this.author = author,
     this.pages = pages,
     this.img = img,
-    this.status = status
+    this.status = status,
+    this.appendTo = appendTo,
+    this.novelHide = novelHide,
+    this.hideNovelSection = hideNovelSection
 }
 
-function displayForm() {
-    addNovel.addEventListener('click', ()=> {
-        novelForm.style.display = 'block';
-        form.reset()
-    });
-    closeForm.addEventListener('click', ()=> {
-        novelForm.style.display = 'none';
-        form.reset()
-    })
-}
-
-displayForm();
-
-function addNovelToPage() {
-    form.addEventListener('submit', (event) => {
-        event.preventDefault()
-        let newNovel = new Novel(novelTitle.value, novelAuthor.value, novelPages.value, novelImgSrc.value, novelStatus.values);
-        myNovels.push(newNovel)
-        novelForm.style.display = 'none';
-        createNovelOnPage();
-    })
-}
-
-addNovelToPage();
-
-function createNovelOnPage() {
+Novel.prototype.createNovel = function() {
     let novelItem = document.createElement('div');
     let novelImg = document.createElement('img');
     let titleOfNovel = document.createElement('h1');
@@ -145,12 +146,12 @@ function createNovelOnPage() {
     markFavorite.classList.add('addToFavorite');
     addToTop5.classList.add('top5');
     remove.classList.add('remove');
-    novelImg.src = novelImgSrc.value;
-    titleOfNovel.textContent = novelTitle.value;
+    novelImg.src = this.img;
+    titleOfNovel.textContent = this.title;
     markFavorite.textContent = 'Mark Favorite';
     addToTop5.textContent = 'Add to Top 5';
     remove.textContent = 'Remove';
-    novelElement.appendChild(novelItem);
+    this.appendTo.appendChild(novelItem);
     novelItem.appendChild(novelImg);
     novelItem.appendChild(titleOfNovel);
     novelItem.appendChild(markFavorite)
@@ -158,15 +159,181 @@ function createNovelOnPage() {
     novelItem.appendChild(remove)
 }
 
-let hideItems = document.querySelector('.hideNovel');
+Novel.prototype.isNovelHidden = false;
 
-function hide() {
-    hideItems.addEventListener('click', ()=> {
-        novelElement.style.display = 'none';
+let novelHide = document.querySelector('.hideNovel');
+let hideNovelSection = document.querySelector('.newNovel');
+let animeHide = document.querySelector('.hideAnime')
+let hideAnimeSection = document.querySelector('.newAnime')
+let mangaHide = document.querySelector('.hideManga')
+let hideMangaSection = document.querySelector('.newManga')
+Novel.prototype.hideSection = function() {
+    // let hide = document.querySelector('.hide');
+    this.novelHide.addEventListener('click', ()=> {
+        if(this.isNovelHidden === false) {
+            this.appendTo.style.display = 'none';
+            this.novelHide.textContent = 'Show'
+            this.isNovelHidden = true;
+        }
+
+        else if(this.isNovelHidden === true) {
+            this.appendTo.style.display = 'grid';
+            this.novelHide.textContent = 'Hide';
+            this.isNovelHidden = false;
+        }
     })
 }
 
-hide();
+addNovelToPage()
+
+function Anime(title, author, pages, img, status, appendTo, novelHide, hideNovelSection) {
+    this.title = title,
+    this.author = author,
+    this.pages = pages,
+    this.img = img,
+    this.status = status,
+    this.appendTo = appendTo,
+    this.novelHide = novelHide,
+    this.hideNovelSection = hideNovelSection
+}
+
+Anime.prototype = Object.create(Novel.prototype);
+addAnimeToPage();
+
+function Manga(title, author, pages, img, status, appendTo, novelHide, hideNovelSection) {
+    this.title = title,
+    this.author = author,
+    this.pages = pages,
+    this.img = img,
+    this.status = status,
+    this.appendTo = appendTo,
+    this.novelHide = novelHide,
+    this.hideNovelSection = hideNovelSection
+}
+Manga.prototype = Object.create(Novel.prototype);
+addMangaToPage();
+
+
+
+function displayNovelForm() {
+    addNovel.addEventListener('click', ()=> {
+        novelForm.style.display = 'block';
+        form.reset()
+    })
+    closeForm.addEventListener('click', ()=> {
+        novelForm.style.display = 'none';
+        form.reset()
+    })
+}
+
+displayNovelForm();
+
+function displayAnimeForm() {
+    addAnime.addEventListener('click', ()=> {
+        animeFormElement.style.display = 'block';
+        animeForm.reset()
+    })
+    animeClose.addEventListener('click', ()=> {
+        animeFormElement.style.display = 'none';
+        animeForm.reset()
+    })
+}
+
+displayAnimeForm();
+
+function displayMangaForm() {
+    addManga.addEventListener('click', ()=> {
+        mangaFormElement.style.display = 'block';
+        mangaForm.reset()
+    })
+    mangaClose.addEventListener('click', ()=> {
+        mangaFormElement.style.display = 'none';
+        mangaForm.reset()
+    })
+}
+
+displayMangaForm();
+
+function addNovelToPage() {
+    form.addEventListener('submit', (event) => {
+        event.preventDefault()
+        let newNovel = new Novel(novelTitle.value, novelAuthor.value, novelPages.value, novelImgSrc.value, novelStatus.values, novelElement[0], novelHide, hideNovelSection);
+        myNovels.push(newNovel)
+        novelForm.style.display = 'none';
+        newNovel.createNovel();
+        newNovel.hideSection()
+    })
+}
+
+
+
+function addAnimeToPage() {
+    animeForm.addEventListener('submit', (event) => {
+        event.preventDefault()
+        let newAnime = new Anime(animeTitle.value, animeAuthor.value, animePages.value, animeImgSrc.value, animeStatus.values, novelElement[1], animeHide, hideAnimeSection);
+        // myNovels.push(newNovel)
+        animeFormElement.style.display = 'none';
+        newAnime.createNovel();
+        newAnime.hideSection();
+    })
+}
+
+function addMangaToPage() {
+    mangaForm.addEventListener('submit', (event) => {
+        event.preventDefault()
+        let newManga = new Manga(mangaTitle.value, mangaAuthor.value, mangaPages.value, mangaImgSrc.value, mangaStatus.values, novelElement[2], mangaHide, hideMangaSection);
+        // myNovels.push(newNovel)
+        mangaFormElement.style.display = 'none';
+        newManga.createNovel();
+        newManga.hideSection()
+    })
+}
+
+// let isNovelHidden = false;
+// let novelHide = document.querySelector('.hideNovel');
+// let hideNovelSection = document.querySelector('.newNovel')
+// function hide() {
+//     let hide = document.querySelector('.hide');
+//     novelHide.addEventListener('click', ()=> {
+//         if(isNovelHidden === false) {
+//             novelElement[0].style.display = 'none';
+//             novelHide.textContent = 'Show'
+//             isNovelHidden = true;
+//         }
+
+//         else if(isNovelHidden === true) {
+//             novelElement[0].style.display = 'grid';
+//             novelHide.textContent = 'Hide';
+//             isNovelHidden = false;
+//         }
+//     })
+// }
+
+// hide();
+
+// Novel.prototype.isNovelHidden = false;
+
+// let novelHide = document.querySelector('.hideNovel');
+// let hideNovelSection = document.querySelector('.newNovel')
+// Novel.prototype.hideSection = function() {
+//     let hide = document.querySelector('.hide');
+//     novelHide.addEventListener('click', ()=> {
+//         if(this.isNovelHidden === false) {
+//             this.appendTo.style.display = 'none';
+//             novelHide.textContent = 'Show'
+//             this.isNovelHidden = true;
+//         }
+
+//         else if(this.isNovelHidden === true) {
+//             this.appendTo.style.display = 'grid';
+//             novelHide.textContent = 'Hide';
+//             this.isNovelHidden = false;
+//         }
+//     })
+// }
+
+
+
 
 // Back to top -----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -223,7 +390,7 @@ const coverButton = document.querySelector('.changeCoverBtn');
 
 theme();
 mobileMenu();
-displayForm();
+// displayForm();
 changeProfile();
 changeCoverImage();
 storage();

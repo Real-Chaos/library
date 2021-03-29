@@ -252,7 +252,8 @@ a {
     padding: .3% 3%;
     background-color: #913fe2;
     outline: none;
-    border-radius: 8px;
+    border-radius: 3px;
+    color: white;
 }
 
 .recentlyAddedGroup {
