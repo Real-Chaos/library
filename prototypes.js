@@ -1,6 +1,6 @@
 // Novel Prototypes -------------------------------------------------------------------------------------------------------------------------------------------
 
-function Novel(title, author, pages, img, status, appendTo, novelHide, hideNovelSection) {
+function Novel(title, author, pages, img, status, appendTo, novelHide, hideNovelSection, novelRating) {
     this.title = title,
     this.author = author,
     this.pages = pages,
@@ -8,7 +8,8 @@ function Novel(title, author, pages, img, status, appendTo, novelHide, hideNovel
     this.status = status,
     this.appendTo = appendTo,
     this.novelHide = novelHide,
-    this.hideNovelSection = hideNovelSection
+    this.hideNovelSection = hideNovelSection,
+    this.novelRating = novelRating
 }
 
 Novel.prototype.createNovel = function() {
@@ -39,6 +40,31 @@ Novel.prototype.createNovel = function() {
     let infoLiStatus = document.createElement('li');
     infoLiStatus.textContent = `Status: ${this.status}`
     infoUl.appendChild(infoLiStatus);
+
+    let starPlacing = document.createElement('div');
+    starPlacing.classList.add('starPlacing');
+    novelItem.appendChild(starPlacing);
+
+    let stars = document.createElement('div');
+    stars.classList.add('stars');
+    starPlacing.appendChild(stars)
+
+    if(this.novelRating >= 1) {
+        for(let i=0; i < this.novelRating; i++) {
+            let starElement = document.createElement('span');
+            starElement.classList.add('checked');
+            starElement.classList.add('fa');
+            starElement.classList.add('fa-star');
+            stars.appendChild(starElement);
+        }
+    }
+
+    for(let i=0; i < 5 - this.novelRating; i++) {
+        let starElement = document.createElement('span');
+        starElement.classList.add('fa');
+        starElement.classList.add('fa-star');
+        stars.appendChild(starElement);
+    }
 
 
     let markFavorite = document.createElement('button');
@@ -78,7 +104,7 @@ Novel.prototype.hideSection = function() {
 
 // Anime Prototypes -------------------------------------------------------------------------------------------------------------------------------------------
 
-function Anime(title, author, pages, img, status, appendTo, novelHide, hideNovelSection) {
+function Anime(title, author, pages, img, status, appendTo, novelHide, hideNovelSection, novelRating) {
     this.title = title,
     this.author = author,
     this.pages = pages,
@@ -86,14 +112,15 @@ function Anime(title, author, pages, img, status, appendTo, novelHide, hideNovel
     this.status = status,
     this.appendTo = appendTo,
     this.novelHide = novelHide,
-    this.hideNovelSection = hideNovelSection
+    this.hideNovelSection = hideNovelSection,
+    this.novelRating = novelRating
 }
 
 Anime.prototype = Object.create(Novel.prototype);
 
 // Manga Prototypes -------------------------------------------------------------------------------------------------------------------------------------------
 
-function Manga(title, author, pages, img, status, appendTo, novelHide, hideNovelSection) {
+function Manga(title, author, pages, img, status, appendTo, novelHide, hideNovelSection, novelRating) {
     this.title = title,
     this.author = author,
     this.pages = pages,
@@ -101,7 +128,8 @@ function Manga(title, author, pages, img, status, appendTo, novelHide, hideNovel
     this.status = status,
     this.appendTo = appendTo,
     this.novelHide = novelHide,
-    this.hideNovelSection = hideNovelSection
+    this.hideNovelSection = hideNovelSection,
+    this.novelRating = novelRating
 }
 
 Manga.prototype = Object.create(Novel.prototype);

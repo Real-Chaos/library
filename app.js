@@ -111,7 +111,7 @@ function displayNovelForm() {
 function addNovelToPage() {
     form.addEventListener('submit', (event) => {
         event.preventDefault()
-        let newNovel = new Novel(novelTitle.value, novelAuthor.value, novelPages.value, novelImgSrc.value, novelStatus.value, novelElement[0], novelHide, hideNovelSection);
+        let newNovel = new Novel(novelTitle.value, novelAuthor.value, novelPages.value, novelImgSrc.value, novelStatus.value, novelElement[0], novelHide, hideNovelSection, novelRating.value);
         myNovels.push(newNovel)
         novelForm.style.display = 'none';
         myNovels.forEach(novel => {
@@ -119,6 +119,10 @@ function addNovelToPage() {
             newNovel.createNovel();
             newNovel.hideSection()
         })
+    })
+    novelRating.addEventListener('input', ()=> {
+        let ratingValue = document.querySelector('.ratingValue');
+        ratingValue.textContent = `${novelRating.value} out of 5`;
     })
 }
 
@@ -139,11 +143,15 @@ function displayAnimeForm() {
 function addAnimeToPage() {
     animeForm.addEventListener('submit', (event) => {
         event.preventDefault()
-        let newAnime = new Anime(animeTitle.value, animeAuthor.value, animePages.value, animeImgSrc.value, animeStatus.value, novelElement[1], animeHide, hideAnimeSection);
+        let newAnime = new Anime(animeTitle.value, animeAuthor.value, animePages.value, animeImgSrc.value, animeStatus.value, novelElement[1], animeHide, hideAnimeSection, animeRating.value);
         // myNovels.push(newNovel)
         animeFormElement.style.display = 'none';
         newAnime.createNovel();
         newAnime.hideSection();
+    })
+    animeRating.addEventListener('input', ()=> {
+        let ratingValue = document.querySelector('.animeRatingValue');
+        ratingValue.textContent = `${animeRating.value} out of 5`;
     })
 }
 
@@ -163,11 +171,16 @@ function displayMangaForm() {
 function addMangaToPage() {
     mangaForm.addEventListener('submit', (event) => {
         event.preventDefault()
-        let newManga = new Manga(mangaTitle.value, mangaAuthor.value, mangaPages.value, mangaImgSrc.value, mangaStatus.value, novelElement[2], mangaHide, hideMangaSection);
+        let newManga = new Manga(mangaTitle.value, mangaAuthor.value, mangaPages.value, mangaImgSrc.value, mangaStatus.value, novelElement[2], mangaHide, hideMangaSection, mangaRating.value);
         // myNovels.push(newNovel)
         mangaFormElement.style.display = 'none';
         newManga.createNovel();
         newManga.hideSection()
+    })
+
+    mangaRating.addEventListener('input', ()=> {
+        let ratingValue = document.querySelector('.mangaRatingValue');
+        ratingValue.textContent = `${mangaRating.value} out of 5`;
     })
 }
 
@@ -245,6 +258,7 @@ let novelAuthor = document.querySelector('.novelAuthor');
 let novelPages = document.querySelector('.novelPages');
 let novelImgSrc = document.querySelector('.novelImg');
 let novelStatus = document.querySelector('.novelStatus');
+let novelRating = document.querySelector('.novelRating');
 let closeForm = document.querySelector('.newNovelForm h4');
 
 // Add Anime Variables-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -260,6 +274,7 @@ let animeAuthor = document.querySelector('.animeAuthor');
 let animePages = document.querySelector('.animePages');
 let animeImgSrc = document.querySelector('.animeImg');
 let animeStatus = document.querySelector('.animeStatus');
+let animeRating = document.querySelector('.animeRating');
 let animeClose = document.querySelector('.animeFormElement h4');
 
 // Add Manga Variables-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -275,6 +290,7 @@ let mangaAuthor = document.querySelector('.mangaAuthor');
 let mangaPages = document.querySelector('.mangaPages');
 let mangaImgSrc = document.querySelector('.mangaImg');
 let mangaStatus = document.querySelector('.mangaStatus');
+let mangaRating = document.querySelector('.mangaRating');
 let mangaClose = document.querySelector('.mangaFormElement h4')
 
 // Calling Functions --------------------------------------------------------------------------------------------------------------------------------------------------

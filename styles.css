@@ -203,6 +203,11 @@ a {
     height: 100% !important;
 }
 
+.newNovelForm label, .ratingValue, .animeRatingValue, .mangaRatingValue {
+    display: block;
+    text-align: center;
+}
+
 .newNovelForm h4 {
     position: absolute;
     right: 5%;
