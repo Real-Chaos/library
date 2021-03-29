@@ -85,21 +85,6 @@ function changeCoverImage() {
 }
 
 // Add Novel -----------------------------------------------------------------------------------------------------------------------------------------------------
-let myNovels = [];
-let novelElement = Array.from(document.querySelectorAll('.newNovel'));
-let novelHide = document.querySelector('.hideNovel');
-let hideNovelSection = document.querySelector('.newNovel');
-
-
-let addNovel = document.querySelector('.addNovel');
-let novelForm = document.querySelector('.newNovelForm');
-let form = document.querySelector('.form');
-let novelTitle = document.querySelector('.novelTitle');
-let novelAuthor = document.querySelector('.novelAuthor');
-let novelPages = document.querySelector('.novelPages');
-let novelImgSrc = document.querySelector('.novelImg');
-let novelStatus = document.querySelector('.novelStatus');
-let closeForm = document.querySelector('.newNovelForm h4');
 
 function Novel(title, author, pages, img, status, appendTo, novelHide, hideNovelSection) {
     this.title = title,
@@ -139,12 +124,6 @@ Novel.prototype.createNovel = function() {
 
 Novel.prototype.isNovelHidden = false;
 
-// let novelHide = document.querySelector('.hideNovel');
-// let hideNovelSection = document.querySelector('.newNovel');
-// let animeHide = document.querySelector('.hideAnime')
-// let hideAnimeSection = document.querySelector('.newAnime')
-let mangaHide = document.querySelector('.hideManga')
-let hideMangaSection = document.querySelector('.newManga')
 Novel.prototype.hideSection = function() {
     this.novelHide.addEventListener('click', ()=> {
         if(this.isNovelHidden === false) {
@@ -172,8 +151,6 @@ function displayNovelForm() {
     })
 }
 
-displayNovelForm();
-
 function addNovelToPage() {
     form.addEventListener('submit', (event) => {
         event.preventDefault()
@@ -185,23 +162,8 @@ function addNovelToPage() {
     })
 }
 
-addNovelToPage()
 
 // Add Anime -----------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-let animeHide = document.querySelector('.hideAnime')
-let hideAnimeSection = document.querySelector('.newAnime')
-
-let addAnime = document.querySelector('.addAnime');
-let animeFormElement = document.querySelector('.animeFormElement');
-let animeForm = document.querySelector('.animeForm')
-let animeTitle = document.querySelector('.animeTitle');
-let animeAuthor = document.querySelector('.animeAuthor');
-let animePages = document.querySelector('.animePages');
-let animeImgSrc = document.querySelector('.animeImg');
-let animeStatus = document.querySelector('.animeStatus');
-let animeClose = document.querySelector('.animeFormElement h4')
 
 function Anime(title, author, pages, img, status, appendTo, novelHide, hideNovelSection) {
     this.title = title,
@@ -227,8 +189,6 @@ function displayAnimeForm() {
     })
 }
 
-displayAnimeForm();
-
 function addAnimeToPage() {
     animeForm.addEventListener('submit', (event) => {
         event.preventDefault()
@@ -240,20 +200,7 @@ function addAnimeToPage() {
     })
 }
 
-addAnimeToPage();
-
 // Add Manga -----------------------------------------------------------------------------------------------------------------------------------------------------
-
-let addManga = document.querySelector('.addManga');
-let mangaFormElement = document.querySelector('.mangaFormElement');
-let mangaForm = document.querySelector('.mangaForm')
-let mangaTitle = document.querySelector('.mangaTitle');
-let mangaAuthor = document.querySelector('.mangaAuthor');
-let mangaPages = document.querySelector('.mangaPages');
-let mangaImgSrc = document.querySelector('.mangaImg');
-let mangaStatus = document.querySelector('.mangaStatus');
-let mangaClose = document.querySelector('.mangaFormElement h4')
-
 
 function Manga(title, author, pages, img, status, appendTo, novelHide, hideNovelSection) {
     this.title = title,
@@ -265,8 +212,8 @@ function Manga(title, author, pages, img, status, appendTo, novelHide, hideNovel
     this.novelHide = novelHide,
     this.hideNovelSection = hideNovelSection
 }
-Manga.prototype = Object.create(Novel.prototype);
 
+Manga.prototype = Object.create(Novel.prototype);
 
 function displayMangaForm() {
     addManga.addEventListener('click', ()=> {
@@ -279,8 +226,6 @@ function displayMangaForm() {
     })
 }
 
-displayMangaForm();
-
 function addMangaToPage() {
     mangaForm.addEventListener('submit', (event) => {
         event.preventDefault()
@@ -291,9 +236,6 @@ function addMangaToPage() {
         newManga.hideSection()
     })
 }
-
-addMangaToPage();
-
 
 // Back to top -----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -319,27 +261,32 @@ function storage() {
 }
 
 
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// LightMode Variables-------------------------------------------------------------------------------------------------------------------------------------------------
 
 let lightMode = false;
 const themeSlider = document.querySelector('.theme');
 const themeChanger = document.querySelector('.lightMode');
 
+// Nav Variables------------------------------------------------------------------------------------------------------------------------------------------------------
 
 let mobileNav = false;
 const desktopMenu = document.querySelector('nav');
 const mobileNavbar = document.querySelector('.hamburgerMenu');
 const mobileNavMediaQuery = window.matchMedia('(max-width: 500px)');
 
+// Profile Variables--------------------------------------------------------------------------------------------------------------------------------------------------
 
 const profile = document.querySelector('.profileImg');
 const profileChange = document.querySelector('.changeProfile');
 let profileFormDisplayed = false;
 
+// Back to Top Btn Variables------------------------------------------------------------------------------------------------------------------------------------------
 
 const button = document.querySelector('.backToTop');
 window.onscroll = () => backToTop();
 
+// Cover Img Change Variables------------------------------------------------------------------------------------------------------------------------------------------
 
 const imageForm = document.querySelector('.changeImageForm');
 const newCoverURL = document.querySelector('.newImage');
@@ -347,12 +294,72 @@ const coverImg = document.querySelector('.coverImg');
 const closeImgForm = document.querySelector('.closeBtn');
 const coverButton = document.querySelector('.changeCoverBtn');
 
+// Add Novel Variables-----------------------------------------------------------------------------------------------------------------------------------------------
+
+let myNovels = [];
+let novelElement = Array.from(document.querySelectorAll('.newNovel'));
+let novelHide = document.querySelector('.hideNovel');
+let hideNovelSection = document.querySelector('.newNovel');
+
+let addNovel = document.querySelector('.addNovel');
+let novelForm = document.querySelector('.newNovelForm');
+let form = document.querySelector('.form');
+let novelTitle = document.querySelector('.novelTitle');
+let novelAuthor = document.querySelector('.novelAuthor');
+let novelPages = document.querySelector('.novelPages');
+let novelImgSrc = document.querySelector('.novelImg');
+let novelStatus = document.querySelector('.novelStatus');
+let closeForm = document.querySelector('.newNovelForm h4');
+
+// Add Anime Variables-------------------------------------------------------------------------------------------------------------------------------------------------
+
+let animeHide = document.querySelector('.hideAnime')
+let hideAnimeSection = document.querySelector('.newAnime')
+
+let addAnime = document.querySelector('.addAnime');
+let animeFormElement = document.querySelector('.animeFormElement');
+let animeForm = document.querySelector('.animeForm')
+let animeTitle = document.querySelector('.animeTitle');
+let animeAuthor = document.querySelector('.animeAuthor');
+let animePages = document.querySelector('.animePages');
+let animeImgSrc = document.querySelector('.animeImg');
+let animeStatus = document.querySelector('.animeStatus');
+let animeClose = document.querySelector('.animeFormElement h4');
+
+// Add Manga Variables-------------------------------------------------------------------------------------------------------------------------------------------------
+
+let mangaHide = document.querySelector('.hideManga')
+let hideMangaSection = document.querySelector('.newManga')
+
+let addManga = document.querySelector('.addManga');
+let mangaFormElement = document.querySelector('.mangaFormElement');
+let mangaForm = document.querySelector('.mangaForm')
+let mangaTitle = document.querySelector('.mangaTitle');
+let mangaAuthor = document.querySelector('.mangaAuthor');
+let mangaPages = document.querySelector('.mangaPages');
+let mangaImgSrc = document.querySelector('.mangaImg');
+let mangaStatus = document.querySelector('.mangaStatus');
+let mangaClose = document.querySelector('.mangaFormElement h4')
+
+// Calling Functions --------------------------------------------------------------------------------------------------------------------------------------------------
 
 theme();
+
 mobileMenu();
-// displayForm();
+
 changeProfile();
+
 changeCoverImage();
+
+displayNovelForm();
+addNovelToPage();
+
+displayAnimeForm();
+addAnimeToPage();
+
+displayMangaForm();
+addMangaToPage();
+
 storage();
 
 
