@@ -43,8 +43,11 @@
 
 <!----- Profile Change ---------------------------------------------------------------------------------------------------------------------->
     <div class="changeProfile">
-        <label for="Profile Change">Enter URL</label>
-        <input type="url" placeholder="Enter URL">
+        <form class="profileChange">
+            <label for="Profile Change">Enter URL</label>
+            <input type="url" class="profileImgSrc" placeholder="Enter URL" required>
+            <input type="submit" value="Change!">
+        </form>
     </div>
     <main>
 <!----- Cover Change ---------------------------------------------------------------------------------------------------------------------->
@@ -53,8 +56,10 @@
             <div class="changeImageForm">
                 <h4 class="closeBtn">x</h4>
                 <h1>Change Cover</h1>
-                <input class="newImage" type="url" placeholder="Enter Image URL">
-                <button class="changeCoverBtn">Change Cover!</button>
+                <form class="changeCoverForm">
+                    <input class="newImage" type="url" placeholder="Enter Image URL" required>
+                    <input type="submit" value="Change!" class="changeCover">
+                </form>
             </div>
             <img class="coverImg" src="images/libraryCover.jpeg" alt="">
 <!----- Favorite ---------------------------------------------------------------------------------------------------------------------->
@@ -126,14 +131,14 @@
                 </div> -->
             </div> 
 
-<!----- Navel List ---------------------------------------------------------------------------------------------------------------------->
+<!----- Novel List ---------------------------------------------------------------------------------------------------------------------->
         
             <div class="novelSection" id="novels">
             <h1 class="novelh1">Novels</h1>
             <button class="hide hideNovel">Hide</button>
             <div class="newNovel">
-                <!-- <div class="novelSectionItem"> -->
-                    <!-- <img src="https://blog.cloudflare.com/content/images/image00.jpg" alt="">
+                <!-- <div class="novelSectionItem">
+                    <img src="https://blog.cloudflare.com/content/images/image00.jpg" alt="">
                     <h1 class="title">Title</h1>
                     <ul>
                        <li>Author: </li>
@@ -151,8 +156,8 @@
                         </div>
                     <button class="addToFavorite">Add to favorite</button>
                     <button class="top5">Add to Top 5</button>
-                    <button class="remove">Remove</button> -->
-                <!-- </div> -->
+                    <button class="remove">Remove</button>
+                </div> -->
             
             </div>
             <!-- <div class="emptyDiv">
@@ -227,8 +232,8 @@
         <!-- <textarea name="Summary" id="" cols="30" class="novelSummary" rows="10" placeholder="Enter Summary Here..." class="textarea" maxlength="300"></textarea> -->
         <select class="animeStatus" name="" id="read" required>
             <option value="">Status</option>
-            <option value="Read">Read</option>
-            <option value="Not Read">Not Read</option>
+            <option value="Read">Seen</option>
+            <option value="Not Read">Not Seen</option>
         </select>
         <input class="novelRating" type="range" name="Ratings" id="" min="1" max="5" required>
         <input type="reset" value="Reset">

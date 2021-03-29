@@ -9,7 +9,6 @@ function theme() {
             themeChanger.classList.remove('fa-sun');
             themeChanger.classList.add('fa-moon');
             themeSlider.style.justifyContent = 'flex-start';
-            document.body.style.color = 'black';
         }
         
         else {
@@ -45,6 +44,16 @@ function mobileMenu() {
 // Profile Image ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 function changeProfile() {
+    profileChangeForm.addEventListener('submit', event => {
+        event.preventDefault();
+        profile.src = profileImgSrc.value;
+        profileChange.style.display = 'none';
+        profileChangeForm.reset()
+    })
+}
+
+
+function displayProfileForm() {
     profile.addEventListener('click', ()=> {
         if(profileFormDisplayed === false) {
             profileChange.style.display = 'grid';
@@ -60,28 +69,30 @@ function changeProfile() {
 
 // Cover Image -----------------------------------------------------------------------------------------------------------------------------------------------------
 
-function displayForm() {
+function displayCoverForm() {
     coverImg.addEventListener('click', ()=> {
         imageForm.style.display = 'grid';
         coverImg.style.display = 'none';
-        newCoverURL.value = '';
+        coverForm.reset()
     });
 
     closeImgForm.addEventListener('click', ()=> {
         imageForm.style.display = 'none';
+        coverForm.reset()
         coverImg.style.display = 'block';
-        newCoverURL.value = '';
     });
     
 } 
 
 function changeCoverImage() {
-    coverButton.addEventListener('click', ()=> {
+    coverForm.addEventListener('submit', event => {
+        event.preventDefault();
         coverImg.src = newCoverURL.value;
         imageForm.style.display = 'none';
         coverImg.style.display = 'block';
-        localStorage.setItem('cover', `${newCoverURL.value}`);
-    });
+        profileChangeForm.reset();
+        localStorage.setItem('cover', newCoverURL.value)
+    })
 }
 
 // Add Novel -----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -100,11 +111,14 @@ function displayNovelForm() {
 function addNovelToPage() {
     form.addEventListener('submit', (event) => {
         event.preventDefault()
-        let newNovel = new Novel(novelTitle.value, novelAuthor.value, novelPages.value, novelImgSrc.value, novelStatus.values, novelElement[0], novelHide, hideNovelSection);
+        let newNovel = new Novel(novelTitle.value, novelAuthor.value, novelPages.value, novelImgSrc.value, novelStatus.value, novelElement[0], novelHide, hideNovelSection);
         myNovels.push(newNovel)
         novelForm.style.display = 'none';
-        newNovel.createNovel();
-        newNovel.hideSection()
+        myNovels.forEach(novel => {
+            myNovels.pop()
+            newNovel.createNovel();
+            newNovel.hideSection()
+        })
     })
 }
 
@@ -125,7 +139,7 @@ function displayAnimeForm() {
 function addAnimeToPage() {
     animeForm.addEventListener('submit', (event) => {
         event.preventDefault()
-        let newAnime = new Anime(animeTitle.value, animeAuthor.value, animePages.value, animeImgSrc.value, animeStatus.values, novelElement[1], animeHide, hideAnimeSection);
+        let newAnime = new Anime(animeTitle.value, animeAuthor.value, animePages.value, animeImgSrc.value, animeStatus.value, novelElement[1], animeHide, hideAnimeSection);
         // myNovels.push(newNovel)
         animeFormElement.style.display = 'none';
         newAnime.createNovel();
@@ -149,7 +163,7 @@ function displayMangaForm() {
 function addMangaToPage() {
     mangaForm.addEventListener('submit', (event) => {
         event.preventDefault()
-        let newManga = new Manga(mangaTitle.value, mangaAuthor.value, mangaPages.value, mangaImgSrc.value, mangaStatus.values, novelElement[2], mangaHide, hideMangaSection);
+        let newManga = new Manga(mangaTitle.value, mangaAuthor.value, mangaPages.value, mangaImgSrc.value, mangaStatus.value, novelElement[2], mangaHide, hideMangaSection);
         // myNovels.push(newNovel)
         mangaFormElement.style.display = 'none';
         newManga.createNovel();
@@ -199,6 +213,8 @@ const mobileNavMediaQuery = window.matchMedia('(max-width: 500px)');
 
 const profile = document.querySelector('.profileImg');
 const profileChange = document.querySelector('.changeProfile');
+const profileChangeForm = document.querySelector('.profileChange');
+let profileImgSrc = document.querySelector('.profileImgSrc')
 let profileFormDisplayed = false;
 
 // Back to Top Btn Variables------------------------------------------------------------------------------------------------------------------------------------------
@@ -209,10 +225,10 @@ window.onscroll = () => backToTop();
 // Cover Img Change Variables------------------------------------------------------------------------------------------------------------------------------------------
 
 const imageForm = document.querySelector('.changeImageForm');
+const coverForm = document.querySelector('.changeCoverForm')
 const newCoverURL = document.querySelector('.newImage');
 const coverImg = document.querySelector('.coverImg');
 const closeImgForm = document.querySelector('.closeBtn');
-const coverButton = document.querySelector('.changeCoverBtn');
 
 // Add Novel Variables-----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -267,8 +283,10 @@ theme();
 
 mobileMenu();
 
+displayProfileForm();
 changeProfile();
 
+displayCoverForm();
 changeCoverImage();
 
 displayNovelForm();

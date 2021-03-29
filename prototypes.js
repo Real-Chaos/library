@@ -13,27 +13,49 @@ function Novel(title, author, pages, img, status, appendTo, novelHide, hideNovel
 
 Novel.prototype.createNovel = function() {
     let novelItem = document.createElement('div');
-    let novelImg = document.createElement('img');
-    let titleOfNovel = document.createElement('h1');
-    let markFavorite = document.createElement('button');
-    let addToTop5 = document.createElement('button');
-    let remove = document.createElement('button');
     novelItem.classList.add('novelSectionItem');
-    titleOfNovel.classList.add('title');
-    markFavorite.classList.add('addToFavorite');
-    addToTop5.classList.add('top5');
-    remove.classList.add('remove');
-    novelImg.src = this.img;
-    titleOfNovel.textContent = this.title;
-    markFavorite.textContent = 'Mark Favorite';
-    addToTop5.textContent = 'Add to Top 5';
-    remove.textContent = 'Remove';
     this.appendTo.appendChild(novelItem);
+    
+    let novelImg = document.createElement('img');
+    novelImg.src = this.img;
     novelItem.appendChild(novelImg);
+
+    let titleOfNovel = document.createElement('h1');
+    titleOfNovel.classList.add('title');
+    titleOfNovel.textContent = this.title;
     novelItem.appendChild(titleOfNovel);
-    novelItem.appendChild(markFavorite)
+    
+    let infoUl = document.createElement('ul');
+    novelItem.appendChild(infoUl);
+
+    let infoLiAuthor = document.createElement('li');
+    infoLiAuthor.textContent = `Author: ${this.author}`
+    infoUl.appendChild(infoLiAuthor);
+
+    let infoLiPages = document.createElement('li');
+    infoLiPages.textContent = `Pages: ${this.pages}`
+    infoUl.appendChild(infoLiPages);
+
+    let infoLiStatus = document.createElement('li');
+    infoLiStatus.textContent = `Status: ${this.status}`
+    infoUl.appendChild(infoLiStatus);
+
+
+    let markFavorite = document.createElement('button');
+    markFavorite.classList.add('addToFavorite');
+    markFavorite.textContent = 'Mark Favorite';
+    novelItem.appendChild(markFavorite);
+    
+    let addToTop5 = document.createElement('button');
+    addToTop5.classList.add('top5');
+    addToTop5.textContent = 'Add to Top 5';
     novelItem.appendChild(addToTop5)
+
+    let remove = document.createElement('button');
+    remove.classList.add('remove');
+    remove.textContent = 'Remove';
     novelItem.appendChild(remove)
+    
 }
 
 Novel.prototype.isNovelHidden = false;
