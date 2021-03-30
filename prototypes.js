@@ -1,15 +1,17 @@
 // Novel Prototypes -------------------------------------------------------------------------------------------------------------------------------------------
 
-function Novel(title, author, pages, img, status, appendTo, novelHide, hideNovelSection, novelRating) {
+function Novel(title, author, pages, img, status, appendTo, novelHide, hideNovelSection, novelRating, typeP) {
     this.title = title,
-    this.author = author,
-    this.pages = pages,
+    this.author = `Author: ${author}`,
+    this.pages = `Pages: ${pages}`,
     this.img = img,
     this.status = status,
     this.appendTo = appendTo,
     this.novelHide = novelHide,
     this.hideNovelSection = hideNovelSection,
-    this.novelRating = novelRating
+    this.novelRating = novelRating,
+    // this.favorite = favorite,
+    this.typeP = typeP
 }
 
 Novel.prototype.createNovel = function() {
@@ -30,11 +32,11 @@ Novel.prototype.createNovel = function() {
     novelItem.appendChild(infoUl);
 
     let infoLiAuthor = document.createElement('li');
-    infoLiAuthor.textContent = `Author: ${this.author}`
+    infoLiAuthor.textContent = `${this.author}`
     infoUl.appendChild(infoLiAuthor);
 
     let infoLiPages = document.createElement('li');
-    infoLiPages.textContent = `Pages: ${this.pages}`
+    infoLiPages.textContent = `${this.pages}`
     infoUl.appendChild(infoLiPages);
 
     let infoLiStatus = document.createElement('li');
@@ -80,7 +82,15 @@ Novel.prototype.createNovel = function() {
     let remove = document.createElement('button');
     remove.classList.add('remove');
     remove.textContent = 'Remove';
-    novelItem.appendChild(remove)
+    novelItem.appendChild(remove);
+
+    markFavorite.addEventListener('click', ()=> {
+        favImg.style.background = `url(${this.img}) no-repeat center center`
+    })
+
+    remove.addEventListener('click', ()=> {
+        novelItem.style.display = 'none';
+    })
     
 }
 
@@ -102,34 +112,70 @@ Novel.prototype.hideSection = function() {
     })
 }
 
+let recentlyAddedArray = [];
+Novel.prototype.recently = function() {
+    let recentlyAddedList = document.querySelector('.recentlyAddedList');
+        let recentlyAddedGroup = document.createElement('div');
+        recentlyAddedGroup.classList.add('recentlyAddedGroup');
+        recentlyAddedList.appendChild(recentlyAddedGroup);
+
+        let recentlyAddedImg = document.createElement('img');
+        recentlyAddedImg.src = this.img;
+        recentlyAddedGroup.appendChild(recentlyAddedImg);
+
+        let novelTitle = document.createElement('h1');
+        novelTitle.textContent = this.title;
+        novelTitle.classList.add('h1')
+        recentlyAddedGroup.appendChild(novelTitle);
+
+
+        let novelLength = document.createElement('p');
+        novelLength.classList.add('length')
+        novelLength.textContent = `${this.pages}`
+        recentlyAddedGroup.appendChild(novelLength)
+
+        let typeOfAdd = document.createElement('div');
+        typeOfAdd.classList.add('type');
+        recentlyAddedGroup.appendChild(typeOfAdd);
+
+        let recentlyAddedType = document.createElement('p');
+        recentlyAddedType.textContent = this.typeP;
+        typeOfAdd.appendChild(recentlyAddedType);
+        
+        return recentlyAddedGroup
+}
+
+
 // Anime Prototypes -------------------------------------------------------------------------------------------------------------------------------------------
 
-function Anime(title, author, pages, img, status, appendTo, novelHide, hideNovelSection, novelRating) {
+function Anime(title, author, pages, img, status, appendTo, novelHide, hideNovelSection, novelRating, typeP) {
     this.title = title,
-    this.author = author,
-    this.pages = pages,
+    this.author = `Creator: ${author}`,
+    this.pages = `Episodes: ${pages}`,
     this.img = img,
     this.status = status,
     this.appendTo = appendTo,
     this.novelHide = novelHide,
     this.hideNovelSection = hideNovelSection,
-    this.novelRating = novelRating
+    this.novelRating = novelRating,
+    this.typeP = typeP
 }
 
 Anime.prototype = Object.create(Novel.prototype);
 
 // Manga Prototypes -------------------------------------------------------------------------------------------------------------------------------------------
 
-function Manga(title, author, pages, img, status, appendTo, novelHide, hideNovelSection, novelRating) {
+function Manga(title, author, pages, img, status, appendTo, novelHide, hideNovelSection, novelRating, typeP) {
     this.title = title,
-    this.author = author,
-    this.pages = pages,
+    this.author = `Mangaka: ${author}`,
+    this.pages = `Chapters: ${pages}`,
     this.img = img,
     this.status = status,
     this.appendTo = appendTo,
     this.novelHide = novelHide,
     this.hideNovelSection = hideNovelSection,
-    this.novelRating = novelRating
+    this.novelRating = novelRating,
+    this.typeP = typeP
 }
 
 Manga.prototype = Object.create(Novel.prototype);

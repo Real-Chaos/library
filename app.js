@@ -111,13 +111,18 @@ function displayNovelForm() {
 function addNovelToPage() {
     form.addEventListener('submit', (event) => {
         event.preventDefault()
-        let newNovel = new Novel(novelTitle.value, novelAuthor.value, novelPages.value, novelImgSrc.value, novelStatus.value, novelElement[0], novelHide, hideNovelSection, novelRating.value);
+        let newNovel = new Novel(novelTitle.value, novelAuthor.value, novelPages.value, novelImgSrc.value, novelStatus.value, novelElement[0], novelHide, hideNovelSection, novelRating.value, 'Novel');
         myNovels.push(newNovel)
         novelForm.style.display = 'none';
         myNovels.forEach(novel => {
             myNovels.pop()
             newNovel.createNovel();
-            newNovel.hideSection()
+            newNovel.hideSection();
+            recentlyAddedArray.push(newNovel.recently())
+            if(recentlyAddedArray.length > 5) {
+            recentlyAddedArray.shift().style.display = 'none';
+            
+            }
         })
     })
     novelRating.addEventListener('input', ()=> {
@@ -143,11 +148,19 @@ function displayAnimeForm() {
 function addAnimeToPage() {
     animeForm.addEventListener('submit', (event) => {
         event.preventDefault()
-        let newAnime = new Anime(animeTitle.value, animeAuthor.value, animePages.value, animeImgSrc.value, animeStatus.value, novelElement[1], animeHide, hideAnimeSection, animeRating.value);
-        // myNovels.push(newNovel)
+        let newAnime = new Anime(animeTitle.value, animeAuthor.value, animePages.value, animeImgSrc.value, animeStatus.value, novelElement[1], animeHide, hideAnimeSection, animeRating.value, 'Anime');
+        myAnime.push(newAnime)
         animeFormElement.style.display = 'none';
-        newAnime.createNovel();
-        newAnime.hideSection();
+        myAnime.forEach(anime => {
+            myAnime.pop()
+            newAnime.createNovel();
+            newAnime.hideSection();
+            recentlyAddedArray.push(newAnime.recently())
+            if(recentlyAddedArray.length > 5) {
+            recentlyAddedArray.shift().style.display = 'none';
+            
+            }
+        })
     })
     animeRating.addEventListener('input', ()=> {
         let ratingValue = document.querySelector('.animeRatingValue');
@@ -171,11 +184,19 @@ function displayMangaForm() {
 function addMangaToPage() {
     mangaForm.addEventListener('submit', (event) => {
         event.preventDefault()
-        let newManga = new Manga(mangaTitle.value, mangaAuthor.value, mangaPages.value, mangaImgSrc.value, mangaStatus.value, novelElement[2], mangaHide, hideMangaSection, mangaRating.value);
-        // myNovels.push(newNovel)
-        mangaFormElement.style.display = 'none';
-        newManga.createNovel();
-        newManga.hideSection()
+        let newManga = new Manga(mangaTitle.value, mangaAuthor.value, mangaPages.value, mangaImgSrc.value, mangaStatus.value, novelElement[2], mangaHide, hideMangaSection, mangaRating.value, 'Manga');
+        myManga.push(newManga)
+        mangaFormElement.style.display = 'none'
+        myManga.forEach(manga => {
+            myManga.pop()
+            newManga.createNovel();
+            newManga.hideSection();
+            recentlyAddedArray.push(newManga.recently())
+            if(recentlyAddedArray.length > 5) {
+            recentlyAddedArray.shift().style.display = 'none';
+            
+            }
+        })
     })
 
     mangaRating.addEventListener('input', ()=> {
@@ -184,6 +205,27 @@ function addMangaToPage() {
     })
 }
 
+// Add To Favorite--------------------------------------------------------------------------------------------------------------------------------------------------
+
+let favImg = document.querySelector('.favorite')
+
+// Recently Added--------------------------------------------------------------------------------------------------------------------------------------------------
+
+function recentlyAdded() {
+    // myNovels.forEach(novel => {
+        // let recentlyAddedList = document.querySelector('.recentlyAddedList');
+        // let recentlyAddedGroup = document.createElement('div');
+        // recentlyAddedGroup.classList.add('.recentlyAddedGroup');
+        // recentlyAddedList.appendChild(recentlyAddedGroup);
+
+        // let recentlyAddedImg = document.createElement('img');
+        // recentlyAddedImg.src = this.img;
+        // recentlyAddedGroup.appendChild(recentlyAddedImg);
+        
+    // })
+}
+
+// recentlyAdded()
 // Back to top -----------------------------------------------------------------------------------------------------------------------------------------------------
 
 function backToTop() {
@@ -262,7 +304,7 @@ let novelRating = document.querySelector('.novelRating');
 let closeForm = document.querySelector('.newNovelForm h4');
 
 // Add Anime Variables-------------------------------------------------------------------------------------------------------------------------------------------------
-
+let myAnime = [];
 let animeHide = document.querySelector('.hideAnime')
 let hideAnimeSection = document.querySelector('.newAnime')
 
@@ -278,7 +320,7 @@ let animeRating = document.querySelector('.animeRating');
 let animeClose = document.querySelector('.animeFormElement h4');
 
 // Add Manga Variables-------------------------------------------------------------------------------------------------------------------------------------------------
-
+let myManga = []
 let mangaHide = document.querySelector('.hideManga')
 let hideMangaSection = document.querySelector('.newManga')
 
@@ -318,3 +360,5 @@ storage();
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// recentlyAdded()
