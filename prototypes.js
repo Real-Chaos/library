@@ -47,26 +47,7 @@ Novel.prototype.createNovel = function() {
     starPlacing.classList.add('starPlacing');
     novelItem.appendChild(starPlacing);
 
-    let stars = document.createElement('div');
-    stars.classList.add('stars');
-    starPlacing.appendChild(stars)
-
-    if(this.novelRating >= 1) {
-        for(let i=0; i < this.novelRating; i++) {
-            let starElement = document.createElement('span');
-            starElement.classList.add('checked');
-            starElement.classList.add('fa');
-            starElement.classList.add('fa-star');
-            stars.appendChild(starElement);
-        }
-    }
-
-    for(let i=0; i < 5 - this.novelRating; i++) {
-        let starElement = document.createElement('span');
-        starElement.classList.add('fa');
-        starElement.classList.add('fa-star');
-        stars.appendChild(starElement);
-    }
+    starPlacing.appendChild(this.stars())
 
 
     let markFavorite = document.createElement('button');
@@ -91,6 +72,12 @@ Novel.prototype.createNovel = function() {
     remove.addEventListener('click', ()=> {
         novelItem.style.display = 'none';
     })
+    if(this.status === 'Read') {
+        libraryLog(this.img, this.title, this.pages, this.stars(), this.typeP)
+    }
+
+    // libraryLog(this.img, this.title, this.pages, this.stars(), this.typeP)
+
     
 }
 
@@ -114,35 +101,61 @@ Novel.prototype.hideSection = function() {
 
 let recentlyAddedArray = [];
 Novel.prototype.recently = function() {
+    
     let recentlyAddedList = document.querySelector('.recentlyAddedList');
         let recentlyAddedGroup = document.createElement('div');
         recentlyAddedGroup.classList.add('recentlyAddedGroup');
-        recentlyAddedList.appendChild(recentlyAddedGroup);
-
+     
         let recentlyAddedImg = document.createElement('img');
         recentlyAddedImg.src = this.img;
-        recentlyAddedGroup.appendChild(recentlyAddedImg);
-
+      
         let novelTitle = document.createElement('h1');
         novelTitle.textContent = this.title;
         novelTitle.classList.add('h1')
-        recentlyAddedGroup.appendChild(novelTitle);
-
 
         let novelLength = document.createElement('p');
         novelLength.classList.add('length')
         novelLength.textContent = `${this.pages}`
-        recentlyAddedGroup.appendChild(novelLength)
 
         let typeOfAdd = document.createElement('div');
         typeOfAdd.classList.add('type');
-        recentlyAddedGroup.appendChild(typeOfAdd);
 
         let recentlyAddedType = document.createElement('p');
         recentlyAddedType.textContent = this.typeP;
+        
+        recentlyAddedList.appendChild(recentlyAddedGroup);
+        recentlyAddedGroup.appendChild(recentlyAddedImg);
+        recentlyAddedGroup.appendChild(novelTitle);
+        recentlyAddedGroup.appendChild(novelLength);
+        recentlyAddedGroup.appendChild(this.stars())
+        recentlyAddedGroup.appendChild(typeOfAdd);
         typeOfAdd.appendChild(recentlyAddedType);
         
         return recentlyAddedGroup
+}
+
+Novel.prototype.stars = function() {
+
+    let stars = document.createElement('div');
+    stars.classList.add('stars');
+
+    if(this.novelRating >= 1) {
+        for(let i=0; i < this.novelRating; i++) {
+            let starElement = document.createElement('span');
+            starElement.classList.add('checked');
+            starElement.classList.add('fa');
+            starElement.classList.add('fa-star');
+            stars.appendChild(starElement);
+        }
+    }
+
+    for(let i=0; i < 5 - this.novelRating; i++) {
+        let starElement = document.createElement('span');
+        starElement.classList.add('fa');
+        starElement.classList.add('fa-star');
+        stars.appendChild(starElement);
+    }
+    return stars
 }
 
 
@@ -179,3 +192,40 @@ function Manga(title, author, pages, img, status, appendTo, novelHide, hideNovel
 }
 
 Manga.prototype = Object.create(Novel.prototype);
+
+// Library Log  ------------------------------------------------------------------------------------------------------------------------------------------
+
+let completed = [];
+
+function libraryLog(img, title, length, stars, type) {
+    let libraryLogNovel = document.querySelector('.libraryLogNovel');
+    let libraryGroup = document.createElement('div');
+    libraryGroup.classList.add('libraryGroup')
+
+    let libraryGroupImg = document.createElement('img');
+    libraryGroupImg.src = img;
+
+    let libraryGroupTitle = document.createElement('h1');
+    libraryGroupTitle.classList.add('h1');
+    libraryGroupTitle.textContent = title;
+
+    let libraryGroupLength = document.createElement('p');
+    libraryGroupLength.classList.add('length');
+    libraryGroupLength.textContent = length;
+
+    let libraryGroupTypeDiv = document.createElement('div');
+    libraryGroupTypeDiv.classList.add('type');
+
+    let libraryGroupType = document.createElement('p');
+    libraryGroupType.textContent = type;
+
+    libraryLogNovel.appendChild(libraryGroup);
+    libraryGroup.appendChild(libraryGroupImg);
+    libraryGroup.appendChild(libraryGroupTitle);
+    libraryGroup.appendChild(libraryGroupLength);
+    libraryGroup.appendChild(stars);
+    libraryGroup.appendChild(libraryGroupTypeDiv)
+    libraryGroupTypeDiv.appendChild(libraryGroupType)
+
+    completed.push(libraryGroup)
+}

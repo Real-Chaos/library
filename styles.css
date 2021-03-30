@@ -271,7 +271,7 @@ a {
 .type {
     width: auto;
     padding: 2px 5px;
-    background-color: #913fe2;
+    background-color: #913fe2 !important;
     position: absolute;
     bottom: 44%;
     left: 20px;

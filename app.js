@@ -118,6 +118,8 @@ function addNovelToPage() {
             myNovels.pop()
             newNovel.createNovel();
             newNovel.hideSection();
+            newNovel.stars();
+            console.log(completed)
             recentlyAddedArray.push(newNovel.recently())
             if(recentlyAddedArray.length > 5) {
             recentlyAddedArray.shift().style.display = 'none';
