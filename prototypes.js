@@ -1,4 +1,6 @@
 // Novel Prototypes -------------------------------------------------------------------------------------------------------------------------------------------
+let completed = [];
+let onGoing = [];
 
 function Novel(title, author, pages, img, status, appendTo, novelHide, hideNovelSection, novelRating, typeP) {
     this.title = title,
@@ -10,7 +12,6 @@ function Novel(title, author, pages, img, status, appendTo, novelHide, hideNovel
     this.novelHide = novelHide,
     this.hideNovelSection = hideNovelSection,
     this.novelRating = novelRating,
-    // this.favorite = favorite,
     this.typeP = typeP
 }
 
@@ -65,18 +66,41 @@ Novel.prototype.createNovel = function() {
     remove.textContent = 'Remove';
     novelItem.appendChild(remove);
 
+
     markFavorite.addEventListener('click', ()=> {
         favImg.style.background = `url(${this.img}) no-repeat center center`
     })
 
-    remove.addEventListener('click', ()=> {
-        novelItem.style.display = 'none';
-    })
+    
+        
     if(this.status === 'Read') {
-        libraryLog(this.img, this.title, this.pages, this.stars(), this.typeP)
+        completed.push(libraryLog(this.img, this.title, this.pages, this.stars(), this.typeP));
+
+    for(let i=0; i<completed.length; i++) {
+        let libraryLogNovel = document.querySelector('.libraryLogNovel');
+        libraryLogNovel.appendChild(completed[i]);
+        
+
+    }
     }
 
-    // libraryLog(this.img, this.title, this.pages, this.stars(), this.typeP)
+    if(this.status === 'Not Read') {
+        onGoing.push(libraryLog(this.img, this.title, this.pages, this.stars(), this.typeP));
+
+    for(let i=0; i<onGoing.length; i++) {
+        let libraryLogNovel = document.querySelector('.libraryLogNovel');
+        libraryLogNovel.appendChild(onGoing[i]);
+        onGoing[i].style.display = 'none';
+    }
+    }
+
+
+    remove.addEventListener('click', ()=> {
+        novelItem.style.display = 'none';
+        
+    })
+
+    
 
     
 }
@@ -195,10 +219,10 @@ Manga.prototype = Object.create(Novel.prototype);
 
 // Library Log  ------------------------------------------------------------------------------------------------------------------------------------------
 
-let completed = [];
+// let completed = [];
 
 function libraryLog(img, title, length, stars, type) {
-    let libraryLogNovel = document.querySelector('.libraryLogNovel');
+    // let libraryLogNovel = document.querySelector('.libraryLogNovel');
     let libraryGroup = document.createElement('div');
     libraryGroup.classList.add('libraryGroup')
 
@@ -219,13 +243,35 @@ function libraryLog(img, title, length, stars, type) {
     let libraryGroupType = document.createElement('p');
     libraryGroupType.textContent = type;
 
-    libraryLogNovel.appendChild(libraryGroup);
+    let deleteIcon = document.createElement('i');
+    deleteIcon.classList.add('fa');
+    deleteIcon.classList.add('fa-trash');
+    deleteIcon.classList.add('deleteImg')
+
+    // libraryLogNovel.appendChild(libraryGroup);
     libraryGroup.appendChild(libraryGroupImg);
     libraryGroup.appendChild(libraryGroupTitle);
     libraryGroup.appendChild(libraryGroupLength);
     libraryGroup.appendChild(stars);
-    libraryGroup.appendChild(libraryGroupTypeDiv)
+    libraryGroup.appendChild(libraryGroupTypeDiv);
+    libraryGroup.appendChild(deleteIcon)
     libraryGroupTypeDiv.appendChild(libraryGroupType)
+    libraryGroup.addEventListener('mouseover', ()=> {
+        deleteIcon.style.display = 'block';
+        libraryGroup.style.background = '#60100B';
+        libraryGroupImg.style.display = 'none';
+        libraryGroupTitle.style.display = 'none';
+    })
+    libraryGroup.addEventListener('mouseleave', ()=> {
+        deleteIcon.style.display = 'none';
+        libraryGroup.style.background = 'rgb(34, 34, 34)';
+        libraryGroupImg.style.display = 'block';
+        libraryGroupTitle.style.display = 'block';
+    })
 
-    completed.push(libraryGroup)
+    libraryGroup.addEventListener('click', ()=> {
+        libraryGroup.style.display = 'none';
+    })
+
+    return libraryGroup;
 }

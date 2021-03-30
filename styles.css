@@ -265,6 +265,7 @@ a {
 
 .recentlyAddedGroup {
     position: relative;
+    height: 250px;
 }
 
 
@@ -743,10 +744,15 @@ p.length {
 
 .libraryTabs p {
     color: white;
-    background-color: #913fe2;
+    /* background-color: #913fe2; */
     padding: 0.5% 30px;
     margin: 30px;
     border-radius: 5px;
+    cursor: pointer ;
+}
+
+.libraryTabs p:nth-child(1) {
+    background-color: #913fe2;
 }
 
 .libraryLogNovel {
@@ -779,6 +785,18 @@ p.length {
 .libraryGroup .type {
     position: absolute;
     bottom: 60%;
+}
+
+.libraryGroup .deleteImg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;
+    font-size: 350%;
+    display: block;
+    text-align: center;
+    display: none;
+    color: red;
 }
 /* Footer --------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -1138,7 +1156,7 @@ p.length {
           background: #913fe2;
       }
       .remove {
-          background: red;
+          
           position: absolute;
           bottom: 5px;
       }

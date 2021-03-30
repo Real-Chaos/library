@@ -117,6 +117,7 @@ function addNovelToPage() {
         myNovels.forEach(novel => {
             myNovels.pop()
             newNovel.createNovel();
+            console.log(myNovels)
             newNovel.hideSection();
             newNovel.stars();
             console.log(completed)
@@ -211,23 +212,74 @@ function addMangaToPage() {
 
 let favImg = document.querySelector('.favorite')
 
-// Recently Added--------------------------------------------------------------------------------------------------------------------------------------------------
+// Library Log--------------------------------------------------------------------------------------------------------------------------------------------------
 
-function recentlyAdded() {
-    // myNovels.forEach(novel => {
-        // let recentlyAddedList = document.querySelector('.recentlyAddedList');
-        // let recentlyAddedGroup = document.createElement('div');
-        // recentlyAddedGroup.classList.add('.recentlyAddedGroup');
-        // recentlyAddedList.appendChild(recentlyAddedGroup);
-
-        // let recentlyAddedImg = document.createElement('img');
-        // recentlyAddedImg.src = this.img;
-        // recentlyAddedGroup.appendChild(recentlyAddedImg);
-        
-    // })
+let libraryTab = {
+    tab1: document.querySelector('.libraryTabs p:nth-child(1)'),
+    tab2: document.querySelector('.libraryTabs p:nth-child(2)'),
+    tab3: document.querySelector('.libraryTabs p:nth-child(3)')
 }
 
-// recentlyAdded()
+// let hideCompletedHidden = false;
+// let hideCompleted = document.querySelector('.libraryGroup');
+
+
+function libraryTabs() {
+    libraryTab.tab1.addEventListener('click', ()=> {
+        libraryTab.tab1.style.background = '#913fe2';
+        libraryTab.tab2.style.background = 'none';
+        libraryTab.tab3.style.background = 'none';
+    });
+
+    libraryTab.tab2.addEventListener('click', ()=> {
+        libraryTab.tab2.style.background = '#913fe2';
+        libraryTab.tab1.style.background = 'none';
+        libraryTab.tab3.style.background = 'none';
+        
+    });
+
+    libraryTab.tab3.addEventListener('click', ()=> {
+        libraryTab.tab3.style.background = '#913fe2';
+        libraryTab.tab1.style.background = 'none';
+        libraryTab.tab2.style.background = 'none';
+    });
+
+    
+}
+
+libraryTabs()
+
+function showingCorrectInfo() {
+    libraryTab.tab1.addEventListener('click', ()=> {
+        for(let i=0; i<completed.length; i++) {
+            completed[i].style.display = 'block';
+        }
+
+        for(let i=0; i<onGoing.length; i++) {
+            onGoing[i].style.display = 'none';
+        }
+    })
+
+    libraryTab.tab2.addEventListener('click', ()=> {
+        for(let i=0; i<completed.length; i++) {
+            completed[i].style.display = 'none';
+        }
+        for(let i=0; i<onGoing.length; i++) {
+            onGoing[i].style.display = 'block';
+        }
+    })
+
+    libraryTab.tab3.addEventListener('click', ()=> {
+        for(let i=0; i<completed.length; i++) {
+            completed[i].style.display = 'none';
+        }
+        for(let i=0; i<onGoing.length; i++) {
+            onGoing[i].style.display = 'none';
+        }
+    })
+}
+
+showingCorrectInfo()
 // Back to top -----------------------------------------------------------------------------------------------------------------------------------------------------
 
 function backToTop() {
