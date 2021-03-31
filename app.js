@@ -108,6 +108,8 @@ function displayNovelForm() {
     })
 }
 
+// let favorite = document.querySelector('.addToFavorite');
+
 function addNovelToPage() {
     form.addEventListener('submit', (event) => {
         event.preventDefault()
@@ -117,10 +119,9 @@ function addNovelToPage() {
         myNovels.forEach(novel => {
             myNovels.pop()
             newNovel.createNovel();
-            console.log(myNovels)
             newNovel.hideSection();
             newNovel.stars();
-            console.log(completed)
+            // newNovel.mostLovedNovel();
             recentlyAddedArray.push(newNovel.recently())
             if(recentlyAddedArray.length > 5) {
             recentlyAddedArray.shift().style.display = 'none';
@@ -158,6 +159,7 @@ function addAnimeToPage() {
             myAnime.pop()
             newAnime.createNovel();
             newAnime.hideSection();
+            // newAnime.mostLovedAnime();
             recentlyAddedArray.push(newAnime.recently())
             if(recentlyAddedArray.length > 5) {
             recentlyAddedArray.shift().style.display = 'none';
@@ -194,6 +196,7 @@ function addMangaToPage() {
             myManga.pop()
             newManga.createNovel();
             newManga.hideSection();
+            
             recentlyAddedArray.push(newManga.recently())
             if(recentlyAddedArray.length > 5) {
             recentlyAddedArray.shift().style.display = 'none';
@@ -214,11 +217,11 @@ let favImg = document.querySelector('.favorite')
 
 // Library Log--------------------------------------------------------------------------------------------------------------------------------------------------
 
-let libraryTab = {
-    tab1: document.querySelector('.libraryTabs p:nth-child(1)'),
-    tab2: document.querySelector('.libraryTabs p:nth-child(2)'),
-    tab3: document.querySelector('.libraryTabs p:nth-child(3)')
-}
+// let libraryTab = {
+//     tab1: document.querySelector('.libraryTabs p:nth-child(1)'),
+//     tab2: document.querySelector('.libraryTabs p:nth-child(2)'),
+//     tab3: document.querySelector('.libraryTabs p:nth-child(3)')
+// }
 
 // let hideCompletedHidden = false;
 // let hideCompleted = document.querySelector('.libraryGroup');
@@ -247,7 +250,7 @@ function libraryTabs() {
     
 }
 
-libraryTabs()
+// libraryTabs()
 
 function showingCorrectInfo() {
     libraryTab.tab1.addEventListener('click', ()=> {
@@ -258,6 +261,10 @@ function showingCorrectInfo() {
         for(let i=0; i<onGoing.length; i++) {
             onGoing[i].style.display = 'none';
         }
+
+        for(let i=0; i<loved.length; i++) {
+            loved[i].style.display = 'none';
+        }
     })
 
     libraryTab.tab2.addEventListener('click', ()=> {
@@ -266,6 +273,9 @@ function showingCorrectInfo() {
         }
         for(let i=0; i<onGoing.length; i++) {
             onGoing[i].style.display = 'block';
+        }
+        for(let i=0; i<loved.length; i++) {
+            loved[i].style.display = 'none';
         }
     })
 
@@ -276,10 +286,86 @@ function showingCorrectInfo() {
         for(let i=0; i<onGoing.length; i++) {
             onGoing[i].style.display = 'none';
         }
+        for(let i=0; i<loved.length; i++) {
+            loved[i].style.display = 'block';
+        }
     })
 }
 
-showingCorrectInfo()
+// showingCorrectInfo()
+
+// Most Loved -----------------------------------------------------------------------------------------------------------------------------------------------------
+
+let top5Tabs = {
+    1: document.querySelector('.tabs ul li:nth-child(1)'),
+    2: document.querySelector('.tabs ul li:nth-child(2)'),
+    3: document.querySelector('.tabs ul li:nth-child(3)'),
+}
+
+function top5Background() {
+    top5Tabs[1].addEventListener('click', ()=> {
+        top5Tabs[1].style.background = '#913fe2';
+        top5Tabs[2].style.background = 'none';
+        top5Tabs[3].style.background = 'none';
+    });
+
+    top5Tabs[2].addEventListener('click', ()=> {
+        top5Tabs[2].style.background = '#913fe2';
+        top5Tabs[1].style.background = 'none';
+        top5Tabs[3].style.background = 'none';
+        
+    });
+
+    top5Tabs[3].addEventListener('click', ()=> {
+        top5Tabs[3].style.background = '#913fe2';
+        top5Tabs[1].style.background = 'none';
+        top5Tabs[2].style.background = 'none';
+    });
+}
+
+top5Background();
+
+function top5Info() {
+
+    top5Tabs[1].addEventListener('click', ()=> {
+        for(let i=0; i< novelTopList.length; i++) {
+            novelTopList[i].style.display = 'flex';
+        }
+        for(let i=0; i< animeTopList.length; i++) {
+            animeTopList[i].style.display = 'none';
+        }
+        for(let i=0; i< mangaTopList.length; i++) {
+            mangaTopList[i].style.display = 'none';
+        }
+    })
+
+    top5Tabs[2].addEventListener('click', ()=> {
+        for(let i=0; i< novelTopList.length; i++) {
+            novelTopList[i].style.display = 'none';
+        }
+        for(let i=0; i< animeTopList.length; i++) {
+            animeTopList[i].style.display = 'flex';
+        }
+        for(let i=0; i< mangaTopList.length; i++) {
+            mangaTopList[i].style.display = 'none';
+        }
+    })
+
+    top5Tabs[3].addEventListener('click', ()=> {
+        for(let i=0; i< novelTopList.length; i++) {
+            novelTopList[i].style.display = 'none';
+        }
+        for(let i=0; i< animeTopList.length; i++) {
+            animeTopList[i].style.display = 'none';
+        }
+        for(let i=0; i< mangaTopList.length; i++) {
+            mangaTopList[i].style.display = 'flex';
+        }
+    })
+}
+
+top5Info()
+
 // Back to top -----------------------------------------------------------------------------------------------------------------------------------------------------
 
 function backToTop() {
@@ -391,6 +477,14 @@ let mangaClose = document.querySelector('.mangaFormElement h4')
 
 // Calling Functions --------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Library Log Variales-----------------------------------------------------------------------------------------------------------------------------------------------
+
+let libraryTab = {
+    tab1: document.querySelector('.libraryTabs p:nth-child(1)'),
+    tab2: document.querySelector('.libraryTabs p:nth-child(2)'),
+    tab3: document.querySelector('.libraryTabs p:nth-child(3)')
+}
+
 theme();
 
 mobileMenu();
@@ -409,6 +503,9 @@ addAnimeToPage();
 
 displayMangaForm();
 addMangaToPage();
+
+libraryTabs();
+showingCorrectInfo()
 
 storage();
 

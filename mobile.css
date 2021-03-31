@@ -273,10 +273,14 @@
 }
 
 .tabs ul li {
-    background-color: #913fe2;
+    /* background-color: #913fe2; */
     padding: 2% 5%;
     margin: 10%;
     border-radius: 5px;
+    cursor: pointer;
+}
+.tabs ul li:nth-child(1) {
+    background-color: #913fe2;
 }
 
 .favNovelList {
@@ -291,7 +295,8 @@
     padding: 1% 2.5%;
     text-align: center;
     border-radius: 7px;
-    height: 40%;
+    width: 10%;
+    height: 35%;
     margin: 2%;
 }
 
@@ -306,12 +311,14 @@
 
 .novelGroup .info {
     margin-top: 2px;
+    /* display: none; */
 }
 
 .novelGroup p {
     font-size: 0.8rem;
     color: #999;
     margin-left: 40%;
+    width: 100px;
     margin-top: 1px;
 }
 

@@ -400,7 +400,7 @@ p.length {
 }
 
 
-  .novelSectionItem button {
+  .novelSectionItem button, .top5 {
       height: 40px;
       border-radius: 34px;
       display: block;
@@ -431,9 +431,21 @@ p.length {
 }
 
 .top5 {
-    background: #ff6600;
     position: absolute;
-    bottom: 95px;
+    bottom: 100px;
+    width: 96%;
+    display: block;
+    text-align: center;
+    /* left: 10px; */
+    border-radius: 34px;
+    height: 40px;
+    outline: none;
+    color: white;
+    background-color: transparent;
+}
+
+.top5 option {
+    color: black;
 }
 
 .status {
@@ -446,6 +458,8 @@ p.length {
     bottom: 5px;
   
 }
+
+
 
 .remove, .addToFavorite, .top5 {
     width: 96% !important;
@@ -618,10 +632,15 @@ p.length {
 }
 
 .tabs ul li {
-    background-color: #913fe2;
+    /* background-color: #913fe2; */
     padding: 2% 10%;
     margin: 10%;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.tabs ul li:nth-child(1) {
+    background-color: #913fe2;
 }
 
 .favNovelList {
@@ -656,8 +675,8 @@ p.length {
 .novelGroup p {
     font-size: 0.8rem;
     color: #999;
-    margin-left: 25%;
     margin-top: 1px;
+    /* display: inline-block; */
 }
 
 .novelGroup p:hover {
@@ -804,6 +823,7 @@ p.length {
     background-color: #913fe2;
     height: 40px;
     width: 100%;
+    margin-top: 30%;
 }
 
 .footer2 .logo {
