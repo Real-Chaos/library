@@ -631,6 +631,18 @@ p.length {
     justify-content: space-around;
 }
 
+.novelGroup .deleteImg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;
+    font-size: 350%;
+    display: block;
+    text-align: center;
+    display: none;
+    color: red;
+}
+
 .tabs ul li {
     /* background-color: #913fe2; */
     padding: 2% 10%;
