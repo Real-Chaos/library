@@ -18,49 +18,15 @@
       </div>
 
       <div class="book-cards">
-        <div class="book-card">
-          <h1 class="book-title">The Hobbit</h1>
-          <h3 class="author">Giga Chad</h3>
-          <h3 class="pages">200 Pages</h3>
-          <button class="read">Read</button>
-          <button class="delete">Delete</button>
-        </div>
-        <div class="book-card">
-          <h1 class="book-title">The Hobbit</h1>
-          <h3 class="author">Giga Chad</h3>
-          <h3 class="pages">200 Pages</h3>
-          <button class="read">Read</button>
-          <button class="delete">Delete</button>
-        </div>
-        <div class="book-card">
-          <h1 class="book-title">The Hobbit</h1>
-          <h3 class="author">Giga Chad</h3>
-          <h3 class="pages">200 Pages</h3>
-          <button class="read">Read</button>
-          <button class="delete">Delete</button>
-        </div>
-        <div class="book-card">
-          <h1 class="book-title">The Hobbit</h1>
-          <h3 class="author">Giga Chad</h3>
-          <h3 class="pages">200 Pages</h3>
-          <button class="read">Read</button>
-          <button class="delete">Delete</button>
-        </div>
-        <div class="book-card">
-          <h1 class="book-title">The Hobbit</h1>
-          <h3 class="author">Giga Chad</h3>
-          <h3 class="pages">200 Pages</h3>
-          <button class="read">Read</button>
-          <button class="delete">Delete</button>
-        </div>
+        
       </div>
 
       <div class="dialog">
         <dialog close>
           <form action="#" class="add-book-form">
             <h2 class="form-title">Add new Book</h2>
-            <input type="text" name="title" id="title" placeholder="Title" />
-            <input type="text" name="author" id="author" placeholder="Author" />
+            <input type="text" name="title" id="title" placeholder="Title" required/>
+            <input type="text" name="author" id="author" placeholder="Author" required/>
             <input
               type="number"
               name="pages"
@@ -68,6 +34,7 @@
               min="10"
               max="5000"
               placeholder="Pages"
+              required
             />
             <div>
               <label for="read">Have you read it?</label>

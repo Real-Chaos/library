@@ -10,6 +10,7 @@
   --green: #9fff9c;
   --red: #D4403A;
   --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --not-read: #ff9c9c;
 }
 
 
@@ -88,6 +89,9 @@ body {
   background-color: var(--green);
 }
 
+.not-read {
+  background-color: var(--not-read);
+}
 .delete {
   background: var(--red);
 }
