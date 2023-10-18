@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="library">
+      <header class="header">
+        <h1 class="title">Library</h1>
+        <button>Login</button>
+      </header>
+      <div class="add-book">
+        <button class="add-book">+ Add Book</button>
+      </div>
+
+      <div class="book-cards">
+        <div class="book-card">
+          <h1 class="book-title">The Hobbit</h1>
+          <h3 class="author">Giga Chad</h3>
+          <h3 class="pages">200 Pages</h3>
+          <button class="read">Read</button>
+          <button class="delete">Delete</button>
+        </div>
+        <div class="book-card">
+          <h1 class="book-title">The Hobbit</h1>
+          <h3 class="author">Giga Chad</h3>
+          <h3 class="pages">200 Pages</h3>
+          <button class="read">Read</button>
+          <button class="delete">Delete</button>
+        </div>
+        <div class="book-card">
+          <h1 class="book-title">The Hobbit</h1>
+          <h3 class="author">Giga Chad</h3>
+          <h3 class="pages">200 Pages</h3>
+          <button class="read">Read</button>
+          <button class="delete">Delete</button>
+        </div>
+        <div class="book-card">
+          <h1 class="book-title">The Hobbit</h1>
+          <h3 class="author">Giga Chad</h3>
+          <h3 class="pages">200 Pages</h3>
+          <button class="read">Read</button>
+          <button class="delete">Delete</button>
+        </div>
+        <div class="book-card">
+          <h1 class="book-title">The Hobbit</h1>
+          <h3 class="author">Giga Chad</h3>
+          <h3 class="pages">200 Pages</h3>
+          <button class="read">Read</button>
+          <button class="delete">Delete</button>
+        </div>
+      </div>
+
+      <div class="dialog">
+        <dialog close>
+          <form action="#" class="add-book-form">
+            <h2 class="form-title">Add new Book</h2>
+            <input type="text" name="title" id="title" placeholder="Title" />
+            <input type="text" name="author" id="author" placeholder="Author" />
+            <input
+              type="number"
+              name="pages"
+              id="pages"
+              min="10"
+              max="5000"
+              placeholder="Pages"
+            />
+            <div>
+              <label for="read">Have you read it?</label>
+              <input type="checkbox" name="read" id="read" />
+            </div>
+            <button class="submit-form">Add</button>
+          </form>
+        </dialog>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
