@@ -23,14 +23,16 @@ window.addEventListener('click', (e) => {
 
 let myLibrary = []
 
-function Book(title, author, pages, read) {
-  this.title = title
-  this.author = author
-  this.pages = pages
-  this.read = read
-  this.index = myLibrary.length
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
+    this.index = myLibrary.length
+  }
 
-  this.toggleRead = function () {
+  toggleRead() {
     this.read = !this.read
   }
 }
@@ -46,24 +48,24 @@ const addToLibrary = (e) => {
   myLibrary.push(book)
   dialog.close()
   displayBook()
-  title=""
-  author=""
-  pages=""
-  read=false
+  title = ''
+  author = ''
+  pages = ''
+  read = false
   form.reset()
 }
 
 const displayBook = () => {
-  bookCards.innerHTML=""
+  bookCards.innerHTML = ''
   myLibrary.forEach((book) => {
     let html = `
     <div class="book-card" data-index=${book.index}>
     <h1 class="book-title">${book.title}</h1>
     <h3 class="author">${book.author}</h3>
     <h3 class="pages">${book.pages} Pages</h3>
-    <button onClick="toggleStatus(this)" class="status ${book.read ? 'read' : 'not-read'}">${
-      book.read ? 'Read' : 'Not Read'
-    }</button>
+    <button onClick="toggleStatus(this)" class="status ${
+      book.read ? 'read' : 'not-read'
+    }">${book.read ? 'Read' : 'Not Read'}</button>
     <button onClick="deleteBook(this)" class="delete">Delete</button>
   </div>
     `
@@ -71,22 +73,20 @@ const displayBook = () => {
   })
 }
 
-
-
-
 // ------------ Event LIsteners ----------------------- //
 
 form.addEventListener('submit', (e) => addToLibrary(e))
 
 const toggleStatus = (e) => {
-  const book = myLibrary.filter(book => book.index == e.parentElement.getAttribute('data-index'))
+  const book = myLibrary.filter(
+    (book) => book.index == e.parentElement.getAttribute('data-index')
+  )
   book[0].toggleRead()
   displayBook()
 }
 
-
 const deleteBook = (e) => {
   const index = e.parentElement.getAttribute('data-index')
-  myLibrary.splice(index, index+1)
+  myLibrary.splice(index, index + 1)
   displayBook()
 }
